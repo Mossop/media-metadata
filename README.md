@@ -24,7 +24,7 @@ In a webpage you can get an appropriate buffer with a [fetch](https://developer.
 ```javascript
 const { parseBuffer } = require("media-metadata");
 
-let response = fetch(url);
+let response = await fetch(url);
 let buffer = response.arrayBuffer();
 let metadata = parseBuffer(buffer);
 ```
