@@ -1,0 +1,39 @@
+{
+  "name": "media-metadata",
+  "version": "0.0.1",
+  "description": "Extract metadata from various media formats. Currently only supports JPEG images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FractalBrew/media-metadata.git"
+  },
+  "keywords": [
+    "media",
+    "image",
+    "video",
+    "exif",
+    "xmp",
+    "metadata"
+  ],
+  "author": "Dave Townsend <dtownsend@oxymoronical.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FractalBrew/media-metadata/issues"
+  },
+  "homepage": "https://github.com/FractalBrew/media-metadata#readme",
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-import": "^2.14.0",
+    "expect": "^23.6.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "file-type": "^9.0.0",
+    "utf-8": "^2.0.0",
+    "xmldom": "^0.1.27"
+  }
+}
