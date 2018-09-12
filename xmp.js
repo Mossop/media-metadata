@@ -12,7 +12,6 @@ const RDF_ALT = "Alt";
 const RDF_LI = "li";
 
 const ELEMENT_NODE = 1;
-const ATTRIBUTE_NODE = 2;
 
 module.exports = {
   NS_XMP,
@@ -28,12 +27,13 @@ function* nodeChildren(element, type) {
   }
 }
 
-function* elementChildren(element) {
-  yield* nodeChildren(element, ELEMENT_NODE);
+function attributeChildren(element) {
+  // xmldom's Node.attributes seems to be an object rather than an array :(
+  return Object.values(element.attributes);
 }
 
-function* attributeChildren(element) {
-  yield* nodeChildren(element, ATTRIBUTE_NODE);
+function* elementChildren(element) {
+  yield* nodeChildren(element, ELEMENT_NODE);
 }
 
 class XMPParser {
@@ -127,9 +127,10 @@ class XMPParser {
     // The header is null terminated.
     let offset = NS_XMP.length + 1;
     let buffer = new Uint8Array(this.data.buffer, this.data.byteOffset + offset, this.data.byteLength - offset);
+    let text = UTF8.getStringFromBytes(buffer);
 
     let parser = new DOMParser();
-    let document = parser.parseFromString(UTF8.getStringFromBytes(buffer));
+    let document = parser.parseFromString(text);
 
     this.parseElement(document.documentElement);
   }
