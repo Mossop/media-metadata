@@ -18,4 +18,4 @@ exports.parseBuffer = function(buffer) {
   }
 
   return metadata;
-}
+};
