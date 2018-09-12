@@ -1,5 +1,10 @@
 {
-  "exif": {
+  "image": {
+    "Artist": "Dave Townsend",
+    "Make": "NIKON CORPORATION",
+    "Model": "NIKON D7000",
+    "ModifyDate": "2018:09:11 21:51:01",
+    "Software": "Adobe Photoshop Lightroom Classic 7.5 (Macintosh)",
     "Compression": [
       6
     ],
@@ -18,6 +23,120 @@
     "ThumbnailLength": [
       5886
     ]
+  },
+  "exif": {
+    "ExposureTime": [
+      0.0005
+    ],
+    "FNumber": [
+      11
+    ],
+    "ExposureProgram": [
+      2
+    ],
+    "ISO": [
+      400
+    ],
+    "SensitivityType": [
+      2
+    ],
+    "ExifVersion": [
+      48,
+      50,
+      51,
+      48
+    ],
+    "DateTimeOriginal": "2018:08:22 18:51:25",
+    "CreateDate": "2018:08:22 18:51:25",
+    "ShutterSpeedValue": [
+      10.965784
+    ],
+    "ApertureValue": [
+      6.918863
+    ],
+    "ExposureCompensation": [
+      0
+    ],
+    "MaxApertureValue": [
+      4.8
+    ],
+    "MeteringMode": [
+      5
+    ],
+    "LightSource": [
+      0
+    ],
+    "Flash": [
+      16
+    ],
+    "FocalLength": [
+      95
+    ],
+    "SubSecTimeOriginal": "80",
+    "SubSecTimeDigitized": "80",
+    "ColorSpace": [
+      1
+    ],
+    "SensingMethod": [
+      2
+    ],
+    "FileSource": [
+      3
+    ],
+    "SceneType": [
+      1
+    ],
+    "CFAPattern": [
+      2,
+      0,
+      2,
+      0,
+      0,
+      1,
+      1,
+      2
+    ],
+    "CustomRendered": [
+      0
+    ],
+    "ExposureMode": [
+      0
+    ],
+    "WhiteBalance": [
+      0
+    ],
+    "DigitalZoomRatio": [
+      1
+    ],
+    "FocalLengthIn35mmFormat": [
+      142
+    ],
+    "SceneCaptureType": [
+      0
+    ],
+    "GainControl": [
+      1
+    ],
+    "Contrast": [
+      0
+    ],
+    "Saturation": [
+      0
+    ],
+    "Sharpness": [
+      0
+    ],
+    "SubjectDistanceRange": [
+      0
+    ],
+    "SerialNumber": "3140722",
+    "LensInfo": [
+      18,
+      200,
+      3.5,
+      5.6
+    ],
+    "LensModel": "18.0-200.0 mm f/3.5-5.6"
   },
   "gps": {
     "GPSVersionID": [

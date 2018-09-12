@@ -112,7 +112,9 @@ class ExifParser extends DataReader {
   }
 
   parseIFD(metaType, tags) {
-    this.metadata[metaType] = {};
+    if (!(metaType in this.metadata)) {
+      this.metadata[metaType] = {};
+    }
 
     let count = this.read16();
     for (let i = 0; i < count; i++) {
@@ -183,7 +185,7 @@ class ExifParser extends DataReader {
 
     let nextIfd;
     do {
-      this.parseIFD("exif", exiftags.exif);
+      this.parseIFD("image", exiftags.exif);
       nextIfd = this.read32();
       this.offset = this.tiffOffset + nextIfd;
     } while (nextIfd != 0);
