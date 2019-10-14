@@ -6,8 +6,9 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
+    "pretest": "tsc -p .",
     "test": "mocha",
-    "prepublish": "tsc -p ."
+    "prepare": "tsc -p ."
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,6 @@
   },
   "dependencies": {
     "file-type": "^12.3.0",
-    "moment": "^2.24.0",
     "xmldom": "^0.1.27"
   }
 }
