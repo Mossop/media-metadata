@@ -1,6 +1,6 @@
 import { DataReader, Alignment } from "./datareader";
 import exiftags, { TagNames } from "./exif-tags";
-import { RawMetadata, ExifMetadataType } from "./metadata";
+import { RawMetadata, ExifMetadataType, ExifData, LinkedMetadataBlocks } from "./metadata";
 
 const BYTE_ORDER_INTEL = 0x4949;
 const BYTE_ORDER_MOTO = 0x4D4D;
@@ -144,20 +144,22 @@ async function readData(reader: DataReader, type: DataType, components: number):
   return results;
 }
 
-async function parseIFD(reader: DataReader, metadata: RawMetadata, tiffOffset: number, ifdOffset: number, count: number, metaType: ExifMetadataType): Promise<void> {
+async function parseIFD(reader: DataReader, metadata: RawMetadata, tiffOffset: number, ifdOffset: number, count: number, metaType?: LinkedMetadataBlocks): Promise<void> {
   if (ifdOffset === 0) {
     return;
   }
   await reader.seek(tiffOffset + ifdOffset);
 
   let tags: TagNames;
-  if (metaType == ExifMetadataType.Image) {
+  let exifData: ExifData;
+
+  if (!metaType) {
     tags = exiftags[ExifMetadataType.Exif];
+    exifData = count === 1 ? metadata[ExifMetadataType.Thumbnail] : metadata[ExifMetadataType.Image];
   } else {
     tags = exiftags[metaType];
+    exifData = metadata[metaType];
   }
-
-  let exifData = metadata[metaType];
 
   let fieldCount = await reader.read16();
   for (let i = 0; i < fieldCount; i++) {
@@ -258,5 +260,5 @@ export async function parseIfdData(reader: DataReader, metadata: RawMetadata): P
   let ifdOffset = await reader.read32();
 
   // The initial IFD is for image data.
-  await parseIFD(reader, metadata, tiffOffset, ifdOffset, 0, ExifMetadataType.Image);
+  await parseIFD(reader, metadata, tiffOffset, ifdOffset, 0);
 }

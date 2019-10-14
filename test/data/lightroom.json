@@ -17,6 +17,17 @@
       "Model": "NIKON D7000",
       "ModifyDate": "2018:09:11 21:51:01",
       "Software": "Adobe Photoshop Lightroom Classic 7.5 (Macintosh)",
+      "XResolution": [
+        240
+      ],
+      "YResolution": [
+        240
+      ],
+      "ResolutionUnit": [
+        2
+      ]
+    },
+    "thumbnail": {
       "Compression": [
         6
       ],

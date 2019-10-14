@@ -13,6 +13,7 @@ async function verifyData(basename) {
   let metadata = await parseBuffer(buffer.buffer);
   let expected = await fs.readFile(path.join(DATA_DIR, `${basename}.json`), { encoding: `utf-8` });
   expected = JSON.parse(expected);
+  delete metadata.thumbnail;
 
   expect(metadata).toEqual(expected);
 }

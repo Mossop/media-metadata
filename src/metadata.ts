@@ -14,13 +14,20 @@ export enum ExifMetadataType {
   Gps = "gps",
   Interoperability = "interoperability",
   Exif = "exif",
+  Thumbnail = "thumbnail",
 }
+
+export type LinkedMetadataBlocks =
+  ExifMetadataType.Gps |
+  ExifMetadataType.Interoperability |
+  ExifMetadataType.Exif;
 
 export interface RawMetadata {
   [ExifMetadataType.Image]: ExifData;
   [ExifMetadataType.Gps]: ExifData;
   [ExifMetadataType.Interoperability]: ExifData;
   [ExifMetadataType.Exif]: ExifData;
+  [ExifMetadataType.Thumbnail]: ExifData;
   xmp: XmpData;
 }
 
@@ -43,6 +50,7 @@ export function newRawMetadata(): RawMetadata {
     [ExifMetadataType.Gps]: {},
     [ExifMetadataType.Interoperability]: {},
     [ExifMetadataType.Exif]: {},
+    [ExifMetadataType.Thumbnail]: {},
     xmp: {},
   };
 }
@@ -133,10 +141,14 @@ export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
 
   let metadata: Metadata = {
     mimetype,
-    created: choose(resolver.created()),
     tags: choose(resolver.tags()) || [],
     raw,
   };
+
+  let created = choose(resolver.created());
+  if (created) {
+    metadata.created = created;
+  }
 
   if (Array.isArray(raw.gps.GPSLatitude) &&
     typeof raw.gps.GPSLatitudeRef === "string" &&

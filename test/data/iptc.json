@@ -28,6 +28,7 @@
     "exif": {},
     "gps": {},
     "interoperability": {},
+    "thumbnail": {},
     "xmp": {
       "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CountryCode": "R17",
       "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CreatorContactInfo": {
