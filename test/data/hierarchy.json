@@ -1,0 +1,332 @@
+{
+  "created": "2019-04-14T20:59:58.396143",
+  "latitude": 45.546858971666666,
+  "longitude": -122.62157997166666,
+  "mimetype": "image/jpeg",
+  "tags": [
+    ["animal", "cat", "Bandit"]
+  ],
+  "people": [],
+
+  "raw": {
+    "exif": {
+      "36880": "-07:00",
+      "ApertureValue": [
+        1.695994
+      ],
+      "BrightnessValue": [
+        -2.68
+      ],
+      "ColorSpace": [
+        1
+      ],
+      "CreateDate": "2019:04:14 20:59:58",
+      "DateTimeOriginal": "2019:04:14 20:59:58",
+      "DigitalZoomRatio": [
+        1
+      ],
+      "ExifVersion": [
+        48,
+        50,
+        51,
+        49
+      ],
+      "ExposureCompensation": [
+        0
+      ],
+      "ExposureMode": [
+        0
+      ],
+      "ExposureTime": [
+        0.06666666666666667
+      ],
+      "FNumber": [
+        1.8
+      ],
+      "Flash": [
+        24
+      ],
+      "FocalLength": [
+        3.95
+      ],
+      "ISO": [
+        2743
+      ],
+      "MeteringMode": [
+        2
+      ],
+      "SceneCaptureType": [
+        0
+      ],
+      "SceneType": [
+        1
+      ],
+      "SensingMethod": [
+        2
+      ],
+      "ShutterSpeedValue": [
+        3.906891
+      ],
+      "SubSecTimeDigitized": "396143",
+      "SubSecTimeOriginal": "396143",
+      "WhiteBalance": [
+        0
+      ]
+    },
+    "gps": {
+      "GPSAltitude": [
+        58.195
+      ],
+      "GPSAltitudeRef": [
+        0
+      ],
+      "GPSDateStamp": "2019:04:15",
+      "GPSLatitude": [
+        45,
+        32.8115383,
+        0
+      ],
+      "GPSLatitudeRef": "N",
+      "GPSLongitude": [
+        122,
+        37.2947983,
+        0
+      ],
+      "GPSLongitudeRef": "W",
+      "GPSMapDatum": "WGS-84",
+      "GPSProcessingMethod": [
+        65,
+        83,
+        67,
+        73,
+        73,
+        0,
+        0,
+        0,
+        71,
+        80,
+        83
+      ],
+      "GPSTimeStamp": [
+        3,
+        59,
+        55
+      ],
+      "GPSVersionID": [
+        2,
+        2,
+        0,
+        0
+      ]
+    },
+    "image": {
+      "Make": "motorola",
+      "Model": "moto g(7)",
+      "ModifyDate": "2019:10:14 14:50:58",
+      "ResolutionUnit": [
+        2
+      ],
+      "Software": "Adobe Photoshop Lightroom Classic 8.4.1 (Macintosh)",
+      "XResolution": [
+        240
+      ],
+      "YResolution": [
+        240
+      ]
+    },
+    "interoperability": {},
+    "thumbnail": {
+      "Compression": [
+        6
+      ],
+      "ResolutionUnit": [
+        2
+      ],
+      "ThumbnailLength": [
+        14097
+      ],
+      "ThumbnailOffset": [
+        984
+      ],
+      "XResolution": [
+        72
+      ],
+      "YResolution": [
+        72
+      ]
+    },
+    "xmp": {
+      "http://ns.adobe.com/camera-raw-settings/1.0/AlreadyApplied": "True",
+      "http://ns.adobe.com/camera-raw-settings/1.0/AutoLateralCA": "1",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Blacks2012": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/BlueHue": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/BlueSaturation": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/CameraProfile": "Embedded",
+      "http://ns.adobe.com/camera-raw-settings/1.0/CameraProfileDigest": "54650A341B5B5CCAE8442D0B43A92BCE",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Clarity2012": "+10",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ColorNoiseReduction": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Contrast2012": "+15",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ConvertToGrayscale": "False",
+      "http://ns.adobe.com/camera-raw-settings/1.0/CropAngle": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/CropBottom": "0.832739",
+      "http://ns.adobe.com/camera-raw-settings/1.0/CropConstrainToWarp": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/CropLeft": "0.185339",
+      "http://ns.adobe.com/camera-raw-settings/1.0/CropRight": "0.989981",
+      "http://ns.adobe.com/camera-raw-settings/1.0/CropTop": "0.028097",
+      "http://ns.adobe.com/camera-raw-settings/1.0/DefringeGreenAmount": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/DefringeGreenHueHi": "60",
+      "http://ns.adobe.com/camera-raw-settings/1.0/DefringeGreenHueLo": "40",
+      "http://ns.adobe.com/camera-raw-settings/1.0/DefringePurpleAmount": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/DefringePurpleHueHi": "70",
+      "http://ns.adobe.com/camera-raw-settings/1.0/DefringePurpleHueLo": "30",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Dehaze": "+15",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Exposure2012": "+0.40",
+      "http://ns.adobe.com/camera-raw-settings/1.0/GrainAmount": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/GreenHue": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/GreenSaturation": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HasCrop": "True",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HasSettings": "True",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Highlights2012": "-67",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HueAdjustmentAqua": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HueAdjustmentBlue": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HueAdjustmentGreen": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HueAdjustmentMagenta": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HueAdjustmentOrange": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HueAdjustmentPurple": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HueAdjustmentRed": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/HueAdjustmentYellow": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/IncrementalTemperature": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/IncrementalTint": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LensManualDistortionAmount": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LensProfileEnable": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LensProfileSetup": "LensDefaults",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Look": "",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceAdjustmentAqua": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceAdjustmentBlue": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceAdjustmentGreen": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceAdjustmentMagenta": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceAdjustmentOrange": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceAdjustmentPurple": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceAdjustmentRed": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceAdjustmentYellow": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceNoiseReductionContrast": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceNoiseReductionDetail": "50",
+      "http://ns.adobe.com/camera-raw-settings/1.0/LuminanceSmoothing": "27",
+      "http://ns.adobe.com/camera-raw-settings/1.0/OverrideLookVignette": "False",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ParametricDarks": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ParametricHighlightSplit": "75",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ParametricHighlights": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ParametricLights": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ParametricMidtoneSplit": "50",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ParametricShadowSplit": "25",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ParametricShadows": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PerspectiveAspect": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PerspectiveHorizontal": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PerspectiveRotate": "0.0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PerspectiveScale": "100",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PerspectiveUpright": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PerspectiveVertical": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PerspectiveX": "0.00",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PerspectiveY": "0.00",
+      "http://ns.adobe.com/camera-raw-settings/1.0/PostCropVignetteAmount": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ProcessVersion": "11.0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/RawFileName": "",
+      "http://ns.adobe.com/camera-raw-settings/1.0/RedHue": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/RedSaturation": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Saturation": "+3",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SaturationAdjustmentAqua": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SaturationAdjustmentBlue": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SaturationAdjustmentGreen": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SaturationAdjustmentMagenta": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SaturationAdjustmentOrange": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SaturationAdjustmentPurple": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SaturationAdjustmentRed": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SaturationAdjustmentYellow": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ShadowTint": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Shadows2012": "+69",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SharpenDetail": "25",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SharpenEdgeMasking": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SharpenRadius": "+1.0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Sharpness": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SplitToningBalance": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SplitToningHighlightHue": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SplitToningHighlightSaturation": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SplitToningShadowHue": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/SplitToningShadowSaturation": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Texture": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurve": [
+        "0, 0",
+        "255, 255"
+      ],
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurveBlue": [
+        "0, 0",
+        "255, 255"
+      ],
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurveGreen": [
+        "0, 0",
+        "255, 255"
+      ],
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurveName": "Linear",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurveName2012": "Linear",
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurvePV2012": [
+        "0, 0",
+        "255, 255"
+      ],
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurvePV2012Blue": [
+        "0, 0",
+        "255, 255"
+      ],
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurvePV2012Green": [
+        "0, 0",
+        "255, 255"
+      ],
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurvePV2012Red": [
+        "0, 0",
+        "255, 255"
+      ],
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneCurveRed": [
+        "0, 0",
+        "255, 255"
+      ],
+      "http://ns.adobe.com/camera-raw-settings/1.0/ToneMapStrength": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightCenterMode": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightCenterNormX": "0.5",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightCenterNormY": "0.5",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightFocalLength35mm": "35",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightFocalMode": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightFourSegmentsCount": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightPreview": "False",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightTransformCount": "6",
+      "http://ns.adobe.com/camera-raw-settings/1.0/UprightVersion": "151388160",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Version": "11.4.1",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Vibrance": "+9",
+      "http://ns.adobe.com/camera-raw-settings/1.0/VignetteAmount": "0",
+      "http://ns.adobe.com/camera-raw-settings/1.0/WhiteBalance": "As Shot",
+      "http://ns.adobe.com/camera-raw-settings/1.0/Whites2012": "0",
+      "http://ns.adobe.com/exif/1.0/aux/LateralChromaticAberrationCorrectionAlreadyApplied": "True",
+      "http://ns.adobe.com/lightroom/1.0/hierarchicalSubject": [
+        "animal|cat|Bandit"
+      ],
+      "http://ns.adobe.com/photoshop/1.0/DateCreated": "2019-04-14T20:59:58.396143",
+      "http://ns.adobe.com/xap/1.0/CreateDate": "2019-04-14T20:59:58.396143",
+      "http://ns.adobe.com/xap/1.0/CreatorTool": "Adobe Photoshop Lightroom Classic 8.4.1 (Macintosh)",
+      "http://ns.adobe.com/xap/1.0/MetadataDate": "2019-10-14T14:50:58-07:00",
+      "http://ns.adobe.com/xap/1.0/ModifyDate": "2019-10-14T14:50:58-07:00",
+      "http://ns.adobe.com/xap/1.0/mm/DerivedFrom": "",
+      "http://ns.adobe.com/xap/1.0/mm/DocumentID": "xmp.did:538d8b6f-9785-41ca-96e7-49edbf95dcdf",
+      "http://ns.adobe.com/xap/1.0/mm/History": [
+        "",
+        ""
+      ],
+      "http://ns.adobe.com/xap/1.0/mm/InstanceID": "xmp.iid:538d8b6f-9785-41ca-96e7-49edbf95dcdf",
+      "http://ns.adobe.com/xap/1.0/mm/OriginalDocumentID": "DBCD28B7DC5BF333DAAE02B720E065DE",
+      "http://ns.adobe.com/xap/1.0/mm/PreservedFileName": "2019-04-14 20.59.58.jpg",
+      "http://purl.org/dc/elements/1.1/format": "image/jpeg",
+      "http://purl.org/dc/elements/1.1/subject": [
+        "Bandit",
+        "animal",
+        "cat"
+      ]
+    }
+  }
+}
