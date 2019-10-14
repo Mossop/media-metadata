@@ -1,7 +1,7 @@
 import { DOMParser } from "xmldom";
 
 import { DataReader } from "./datareader";
-import { Metadata, XmpData, XmpType } from "./metadata";
+import { RawMetadata, XmpData, XmpType } from "./metadata";
 
 const NS_RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 const NS_XMLNS = "http://www.w3.org/2000/xmlns/";
@@ -136,7 +136,7 @@ class XMPParser {
   }
 }
 
-export async function parseXmpData(reader: DataReader, metadata: Metadata, length: number): Promise<void> {
+export async function parseXmpData(reader: DataReader, metadata: RawMetadata, length: number): Promise<void> {
   let buffer = Buffer.from(await reader.readData(length));
   let xml = buffer.toString("utf8");
 

@@ -16,7 +16,7 @@ export enum ExifMetadataType {
   Exif = "exif",
 }
 
-export interface Metadata {
+export interface RawMetadata {
   [ExifMetadataType.Image]: ExifData;
   [ExifMetadataType.Gps]: ExifData;
   [ExifMetadataType.Interoperability]: ExifData;
@@ -24,7 +24,20 @@ export interface Metadata {
   xmp: XmpData;
 }
 
-export function newMetadata(): Metadata {
+export interface Metadata {
+  mimetype?: string;
+  width?: number;
+  height?: number;
+  created?: string;
+
+  tags: string[][];
+  longitude?: number;
+  latitude?: number;
+
+  raw: RawMetadata;
+}
+
+export function newRawMetadata(): RawMetadata {
   return {
     [ExifMetadataType.Image]: {},
     [ExifMetadataType.Gps]: {},

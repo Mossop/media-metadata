@@ -1,6 +1,6 @@
 import { DataReader, Alignment } from "./datareader";
 //import { parseXmpData, NS_XMP } from "./xmp";
-import { Metadata, newMetadata } from "./metadata";
+import { RawMetadata, newRawMetadata } from "./metadata";
 import { parseIfdData } from "./ifd";
 import { parseXmpData } from "./xmp";
 
@@ -15,8 +15,8 @@ const JPEG_APPX = 0xFFE0;
 const JPEG_SOS = 0xFFDA;
 const JPEG_EOI = 0xFFD9;
 
-export async function parseJpegData(reader: DataReader): Promise<Metadata> {
-  let metadata: Metadata = newMetadata();
+export async function parseJpegData(reader: DataReader): Promise<RawMetadata> {
+  let metadata: RawMetadata = newRawMetadata();
 
   let soi = await reader.read16();
   if (soi !== JPEG_SOI) {

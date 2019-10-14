@@ -1,6 +1,6 @@
 import { DataReader, Alignment } from "./datareader";
 import exiftags, { TagNames } from "./exif-tags";
-import { Metadata, ExifMetadataType } from "./metadata";
+import { RawMetadata, ExifMetadataType } from "./metadata";
 
 const BYTE_ORDER_INTEL = 0x4949;
 const BYTE_ORDER_MOTO = 0x4D4D;
@@ -144,7 +144,7 @@ async function readData(reader: DataReader, type: DataType, components: number):
   return results;
 }
 
-async function parseIFD(reader: DataReader, metadata: Metadata, tiffOffset: number, ifdOffset: number, count: number, metaType: ExifMetadataType): Promise<void> {
+async function parseIFD(reader: DataReader, metadata: RawMetadata, tiffOffset: number, ifdOffset: number, count: number, metaType: ExifMetadataType): Promise<void> {
   if (ifdOffset === 0) {
     return;
   }
@@ -230,7 +230,7 @@ async function parseIFD(reader: DataReader, metadata: Metadata, tiffOffset: numb
   await parseIFD(reader, metadata, tiffOffset, nextIfd, count + 1, metaType);
 }
 
-export async function parseIfdData(reader: DataReader, metadata: Metadata): Promise<void> {
+export async function parseIfdData(reader: DataReader, metadata: RawMetadata): Promise<void> {
   // Contains 1 padding byte, presumably to align the tiff data on an even boundary.
   reader.skip(1);
 

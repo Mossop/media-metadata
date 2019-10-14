@@ -1,333 +1,343 @@
 {
-  "image": {
-    "ImageDescription": "The description aka caption (ref2017.1)",
-    "XResolution": [
-      72
-    ],
-    "YResolution": [
-      72
-    ],
-    "ResolutionUnit": [
-      2
-    ],
-    "Artist": "Creator1 (ref2017.1)",
-    "YCbCrPositioning": [
-      1
-    ],
-    "Copyright": "Copyright (Notice) 2017.1 IPTC - www.iptc.org  (ref2017.1)"
-  },
-  "exif": {},
-  "gps": {},
-  "interoperability": {},
-  "xmp": {
-    "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CountryCode": "R17",
-    "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CreatorContactInfo": {
-      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrCity": "Creator's CI: City (ref2017.1)",
-      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrCtry": "Creator's CI: Country (ref2017.1)",
-      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrExtadr": "Creator's CI: Address, line 1 (ref2017.1)",
-      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrPcode": "Creator's CI: Postcode (ref2017.1)",
-      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrRegion": "Creator's CI: State/Province (ref2017.1)",
-      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiEmailWork": "Creator's CI: Email@1, Email@2 (ref2017.1)",
-      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiTelWork": "Creator's CI: Phone # 1, Phone # 2 (ref2017.1)",
-      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiUrlWork": "http://www.Creators.CI/WebAddress/ref2017.1"
+  "mimetype": "image/jpeg",
+
+  "tags": [
+    ["Keyword1ref2017.1"],
+    ["Keyword2ref2017.1"],
+    ["Keyword3ref2017.1"]
+  ],
+
+  "raw": {
+    "image": {
+      "ImageDescription": "The description aka caption (ref2017.1)",
+      "XResolution": [
+        72
+      ],
+      "YResolution": [
+        72
+      ],
+      "ResolutionUnit": [
+        2
+      ],
+      "Artist": "Creator1 (ref2017.1)",
+      "YCbCrPositioning": [
+        1
+      ],
+      "Copyright": "Copyright (Notice) 2017.1 IPTC - www.iptc.org  (ref2017.1)"
     },
-    "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/IntellectualGenre": "A Genre (ref2017.1)",
-    "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/Location": "Sublocation (Core) (ref2017.1)",
-    "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/Scene": [
-      "IPTC-Scene-Code1 (ref2017.1)",
-      "IPTC-Scene-Code2 (ref2017.1)"
-    ],
-    "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/SubjectCode": [
-      "1ref2017.1",
-      "2ref2017.1",
-      "3ref2017.1"
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AboutCvTerm": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvId": "http://example.com/cv/about/ref2017.1",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermId": "http://example.com/cv/about/ref2017.1/code987",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermName": [
-          "CV-Term Name 1 (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermRefinedAbout": "http://example.com/cv/refinements2/ref2017.1/codeX145"
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AddlModelInfo": "Additional Model Info (ref2017.1)",
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ArtworkOrObject": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCircaDateCreated": "AO Circa Date: between 1550 and 1600 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOContentDescription": [
-          "AO Content Description 1 (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOContributionDescription": [
-          "AO Contribution Description 1 (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCopyrightNotice": "AO Copyright Notice 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCreator": [
-          "AO Creator Name 1a (ref2017.1)",
-          "AO Creator Name 1b (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCreatorId": [
-          "AO Creator Id 1a (ref2017.1)",
-          "AO Creator Id 1b (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCurrentCopyrightOwnerId": "AO Current Copyright Owner ID 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCurrentCopyrightOwnerName": "AO Current Copyright Owner Name 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCurrentLicensorId": "AO Current Licensor ID 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCurrentLicensorName": "AO Current Licensor Name 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AODateCreated": "1916-10-26T12:13:14+00:00",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOPhysicalDescription": [
-          "AO Physical Description 1 (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOSource": "AO Source 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOSourceInvNo": "AO Source Inventory No 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOSourceInvURL": "AO Source Inventory URL (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOStylePeriod": [
-          "AO Style Baroque (ref2017.1)",
-          "AO Style Italian Baroque (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOTitle": [
-          "AO Title 1 (ref2017.1)"
-        ]
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/DigImageGUID": "http://example.com/imageGUIDs/TestGUID12345/ref2017.1",
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/DigitalSourceType": "http://cv.iptc.org/newscodes/digitalsourcetype/softwareImage",
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/EmbdEncRightsExpr": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/EncRightsExpr": "The Encoded Rights Expression (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RightsExprEncType": "IANA Media Type of ERE (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RightsExprLangId": "http://example.org/RELids/id4711/ref2017.1"
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Event": [
-      "An Event (ref2017.1)"
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Genre": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvId": "http://example.com/cv/genre/ref2017.1",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermId": "http://example.com/cv/genre/ref2017.1/code1369",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermName": [
-          "Genre CV-Term Name 1 (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermRefinedAbout": "http://example.com/cv/genrerefinements2/ref2017.1/codeY864"
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LinkedEncRightsExpr": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LinkedRightsExpr": "http://example.org/linkedrightsexpression/id986/ref2017.1",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RightsExprEncType": "IANA Media Type of ERE (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RightsExprLangId": "http://example.org/RELids/id4712/ref2017.1"
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationCreated": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/City": "City (Location created1) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryCode": "R17",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryName": "CountryName (Location created1) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationId": [
-          "Location Id (Location created1) (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProvinceState": "Province/State (Location created1) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Sublocation": "Sublocation (Location created1) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/WorldRegion": "Worldregion (Location created1) (ref2017.1)"
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationShown": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/City": "City (Location shown1) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryCode": "R17",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryName": "CountryName (Location shown1) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationId": [
-          "Location Id 1a(Location shown1) (ref2017.1)",
-          "Location Id 1b(Location shown1) (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProvinceState": "Province/State (Location shown1) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Sublocation": "Sublocation (Location shown1) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/WorldRegion": "Worldregion (Location shown1) (ref2017.1)"
+    "exif": {},
+    "gps": {},
+    "interoperability": {},
+    "xmp": {
+      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CountryCode": "R17",
+      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CreatorContactInfo": {
+        "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrCity": "Creator's CI: City (ref2017.1)",
+        "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrCtry": "Creator's CI: Country (ref2017.1)",
+        "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrExtadr": "Creator's CI: Address, line 1 (ref2017.1)",
+        "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrPcode": "Creator's CI: Postcode (ref2017.1)",
+        "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiAdrRegion": "Creator's CI: State/Province (ref2017.1)",
+        "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiEmailWork": "Creator's CI: Email@1, Email@2 (ref2017.1)",
+        "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiTelWork": "Creator's CI: Phone # 1, Phone # 2 (ref2017.1)",
+        "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CiUrlWork": "http://www.Creators.CI/WebAddress/ref2017.1"
       },
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/City": "City (Location shown2) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryCode": "R17",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryName": "CountryName (Location shown2) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationId": [
-          "Location Id 2a(Location shown2) (ref2017.1)",
-          "Location Id 2b(Location shown2) (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProvinceState": "Province/State (Location shown2) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Sublocation": "Sublocation (Location shown2) (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/WorldRegion": "Worldregion (Location shown2) (ref2017.1)"
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/MaxAvailHeight": "14",
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/MaxAvailWidth": "20",
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ModelAge": [
-      "25",
-      "27",
-      "30"
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/OrganisationInImageCode": [
-      "Organisation Code 1 (ref2017.1)",
-      "Organisation Code 2 (ref2017.1)",
-      "Organisation Code 3 (ref2017.1)"
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/OrganisationInImageName": [
-      "Organisation Name 1 (ref2017.1)",
-      "Organisation Name 2 (ref2017.1)",
-      "Organisation Name 3 (ref2017.1)"
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonInImage": [
-      "Person Shown 1 (ref2017.1)",
-      "Person Shown 2 (ref2017.1)"
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonInImageWDetails": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonCharacteristic": [
-          {
-            "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvId": "http://example.com/cv/test99/ref2017.1",
-            "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermId": "http://example.com/cv/test99/code987/ref2017.1",
-            "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermName": [
-              "Person Characteristic Name 1 (ref2017.1)"
-            ],
-            "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermRefinedAbout": "http://example.com/cv/refinements987/codeY765/ref2017.1"
-          }
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonDescription": [
-          "Person Description 1 (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonId": [
-          "http://wikidata.org/item/Q123456789/ref2017.1",
-          "http://freebase.com/m/987654321/ref2017.1"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonName": [
-          "Person Name 1 (ref2017.1)"
-        ]
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProductInImage": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProductDescription": [
-          "Product Description 1 (ref2017.1)"
-        ],
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProductGTIN": "123456782017.1",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProductName": [
-          "Product Name 1 (ref2017.1)"
-        ]
-      }
-    ],
-    "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegistryId": [
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegEntryRole": "Registry Entry Role ID 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegItemId": "Registry Image ID 1 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegOrgId": "Registry Organisation ID 1 (ref2017.1)"
-      },
-      {
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegEntryRole": "Registry Entry Role ID 2 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegItemId": "Registry Image ID 2 (ref2017.1)",
-        "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegOrgId": "Registry Organisation ID 2 (ref2017.1)"
-      }
-    ],
-    "http://purl.org/dc/elements/1.1/creator": [
-      "Creator1 (ref2017.1)",
-      "Creator2 (ref2017.1)"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      "The description aka caption (ref2017.1)"
-    ],
-    "http://purl.org/dc/elements/1.1/rights": [
-      "Copyright (Notice) 2017.1 IPTC - www.iptc.org  (ref2017.1)"
-    ],
-    "http://purl.org/dc/elements/1.1/subject": [
-      "Keyword1ref2017.1",
-      "Keyword2ref2017.1",
-      "Keyword3ref2017.1"
-    ],
-    "http://purl.org/dc/elements/1.1/title": [
-      "The Title (ref2017.1)"
-    ],
-    "http://ns.adobe.com/photoshop/1.0/AuthorsPosition": "Creator's Job Title  (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/CaptionWriter": "Description Writer (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/City": "City (Core) (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/Country": "Country (Core) (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/Credit": "Credit Line (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/DateCreated": "2017-07-13T17:01:00+00:00",
-    "http://ns.adobe.com/photoshop/1.0/Headline": "The Headline (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/Instructions": "An Instruction (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/Source": "Source (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/State": "Province/State (Core) (ref2017.1)",
-    "http://ns.adobe.com/photoshop/1.0/TransmissionReference": "Job Id (ref2017.1)",
-    "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwner": [
-      {
-        "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwnerID": "Copyright Owner Id 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwnerName": "Copyright Owner Name 1 (ref2017.1)"
-      },
-      {
-        "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwnerID": "Copyright Owner Id 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwnerName": "Copyright Owner Name 2 (ref2017.1)"
-      }
-    ],
-    "http://ns.useplus.org/ldf/xmp/1.0/ImageCreator": [
-      {
-        "http://ns.useplus.org/ldf/xmp/1.0/ImageCreatorID": "Image Creator Id 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/ImageCreatorName": "Image Creator Name 1 (ref2017.1)"
-      },
-      {
-        "http://ns.useplus.org/ldf/xmp/1.0/ImageCreatorID": "Image Creator Id 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/ImageCreatorName": "Image Creator Name 2 (ref2017.1)"
-      }
-    ],
-    "http://ns.useplus.org/ldf/xmp/1.0/ImageSupplier": [
-      {
-        "http://ns.useplus.org/ldf/xmp/1.0/ImageSupplierID": "Image Supplier Id (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/ImageSupplierName": "Image Supplier Name (ref2017.1)"
-      }
-    ],
-    "http://ns.useplus.org/ldf/xmp/1.0/ImageSupplierImageID": "Image Supplier Image ID (ref2017.1)",
-    "http://ns.useplus.org/ldf/xmp/1.0/Licensor": [
-      {
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorCity": "Licensor City 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorCountry": "Licensor Country 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorEmail": "Licensor Email 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorExtendedAddress": "Licensor Ext Addr 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorID": "Licensor ID 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorName": "Licensor Name 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorPostalCode": "Licensor Postcode 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorRegion": "Licensor Region 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorStreetAddress": "Licensor Street Addr 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorTelephone1": "Licensor Phone1 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorTelephone2": "Licensor Phone2 1 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorURL": "Licensor URL 1 (ref2017.1)"
-      },
-      {
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorCity": "Licensor City 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorCountry": "Licensor Country 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorEmail": "Licensor Email 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorExtendedAddress": "Licensor Ext Addr 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorID": "Licensor ID 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorName": "Licensor Name 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorPostalCode": "Licensor Postcode 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorRegion": "Licensor Region 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorStreetAddress": "Licensor Street Addr 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorTelephone1": "Licensor Phone1 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorTelephone2": "Licensor Phone2 2 (ref2017.1)",
-        "http://ns.useplus.org/ldf/xmp/1.0/LicensorURL": "Licensor URL 2 (ref2017.1)"
-      }
-    ],
-    "http://ns.useplus.org/ldf/xmp/1.0/MinorModelAgeDisclosure": "http://ns.useplus.org/ldf/vocab/AG-A25",
-    "http://ns.useplus.org/ldf/xmp/1.0/ModelReleaseID": [
-      "Model Release ID 1 (ref2017.1)",
-      "Model Release ID 2 (ref2017.1)"
-    ],
-    "http://ns.useplus.org/ldf/xmp/1.0/ModelReleaseStatus": "http://ns.useplus.org/ldf/vocab/MR-NAP",
-    "http://ns.useplus.org/ldf/xmp/1.0/PropertyReleaseID": [
-      "Property Release ID 1 (ref2017.1)",
-      "Property Release ID 2 (ref2017.1)"
-    ],
-    "http://ns.useplus.org/ldf/xmp/1.0/PropertyReleaseStatus": "http://ns.useplus.org/ldf/vocab/PR-NAP",
-    "http://ns.adobe.com/xap/1.0/Rating": "1.0",
-    "http://ns.adobe.com/xap/1.0/rights/UsageTerms": [
-      "Rights Usage Termns (ref2017.1)"
-    ],
-    "http://ns.adobe.com/xap/1.0/rights/WebStatement": "http://www.WebStatementOfRights.org/2017.1"
+      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/IntellectualGenre": "A Genre (ref2017.1)",
+      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/Location": "Sublocation (Core) (ref2017.1)",
+      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/Scene": [
+        "IPTC-Scene-Code1 (ref2017.1)",
+        "IPTC-Scene-Code2 (ref2017.1)"
+      ],
+      "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/SubjectCode": [
+        "1ref2017.1",
+        "2ref2017.1",
+        "3ref2017.1"
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AboutCvTerm": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvId": "http://example.com/cv/about/ref2017.1",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermId": "http://example.com/cv/about/ref2017.1/code987",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermName": [
+            "CV-Term Name 1 (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermRefinedAbout": "http://example.com/cv/refinements2/ref2017.1/codeX145"
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AddlModelInfo": "Additional Model Info (ref2017.1)",
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ArtworkOrObject": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCircaDateCreated": "AO Circa Date: between 1550 and 1600 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOContentDescription": [
+            "AO Content Description 1 (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOContributionDescription": [
+            "AO Contribution Description 1 (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCopyrightNotice": "AO Copyright Notice 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCreator": [
+            "AO Creator Name 1a (ref2017.1)",
+            "AO Creator Name 1b (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCreatorId": [
+            "AO Creator Id 1a (ref2017.1)",
+            "AO Creator Id 1b (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCurrentCopyrightOwnerId": "AO Current Copyright Owner ID 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCurrentCopyrightOwnerName": "AO Current Copyright Owner Name 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCurrentLicensorId": "AO Current Licensor ID 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOCurrentLicensorName": "AO Current Licensor Name 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AODateCreated": "1916-10-26T12:13:14+00:00",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOPhysicalDescription": [
+            "AO Physical Description 1 (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOSource": "AO Source 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOSourceInvNo": "AO Source Inventory No 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOSourceInvURL": "AO Source Inventory URL (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOStylePeriod": [
+            "AO Style Baroque (ref2017.1)",
+            "AO Style Italian Baroque (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/AOTitle": [
+            "AO Title 1 (ref2017.1)"
+          ]
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/DigImageGUID": "http://example.com/imageGUIDs/TestGUID12345/ref2017.1",
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/DigitalSourceType": "http://cv.iptc.org/newscodes/digitalsourcetype/softwareImage",
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/EmbdEncRightsExpr": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/EncRightsExpr": "The Encoded Rights Expression (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RightsExprEncType": "IANA Media Type of ERE (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RightsExprLangId": "http://example.org/RELids/id4711/ref2017.1"
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Event": [
+        "An Event (ref2017.1)"
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Genre": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvId": "http://example.com/cv/genre/ref2017.1",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermId": "http://example.com/cv/genre/ref2017.1/code1369",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermName": [
+            "Genre CV-Term Name 1 (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermRefinedAbout": "http://example.com/cv/genrerefinements2/ref2017.1/codeY864"
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LinkedEncRightsExpr": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LinkedRightsExpr": "http://example.org/linkedrightsexpression/id986/ref2017.1",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RightsExprEncType": "IANA Media Type of ERE (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RightsExprLangId": "http://example.org/RELids/id4712/ref2017.1"
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationCreated": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/City": "City (Location created1) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryCode": "R17",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryName": "CountryName (Location created1) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationId": [
+            "Location Id (Location created1) (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProvinceState": "Province/State (Location created1) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Sublocation": "Sublocation (Location created1) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/WorldRegion": "Worldregion (Location created1) (ref2017.1)"
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationShown": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/City": "City (Location shown1) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryCode": "R17",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryName": "CountryName (Location shown1) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationId": [
+            "Location Id 1a(Location shown1) (ref2017.1)",
+            "Location Id 1b(Location shown1) (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProvinceState": "Province/State (Location shown1) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Sublocation": "Sublocation (Location shown1) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/WorldRegion": "Worldregion (Location shown1) (ref2017.1)"
+        },
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/City": "City (Location shown2) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryCode": "R17",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CountryName": "CountryName (Location shown2) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/LocationId": [
+            "Location Id 2a(Location shown2) (ref2017.1)",
+            "Location Id 2b(Location shown2) (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProvinceState": "Province/State (Location shown2) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/Sublocation": "Sublocation (Location shown2) (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/WorldRegion": "Worldregion (Location shown2) (ref2017.1)"
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/MaxAvailHeight": "14",
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/MaxAvailWidth": "20",
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ModelAge": [
+        "25",
+        "27",
+        "30"
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/OrganisationInImageCode": [
+        "Organisation Code 1 (ref2017.1)",
+        "Organisation Code 2 (ref2017.1)",
+        "Organisation Code 3 (ref2017.1)"
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/OrganisationInImageName": [
+        "Organisation Name 1 (ref2017.1)",
+        "Organisation Name 2 (ref2017.1)",
+        "Organisation Name 3 (ref2017.1)"
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonInImage": [
+        "Person Shown 1 (ref2017.1)",
+        "Person Shown 2 (ref2017.1)"
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonInImageWDetails": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonCharacteristic": [
+            {
+              "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvId": "http://example.com/cv/test99/ref2017.1",
+              "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermId": "http://example.com/cv/test99/code987/ref2017.1",
+              "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermName": [
+                "Person Characteristic Name 1 (ref2017.1)"
+              ],
+              "http://iptc.org/std/Iptc4xmpExt/2008-02-29/CvTermRefinedAbout": "http://example.com/cv/refinements987/codeY765/ref2017.1"
+            }
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonDescription": [
+            "Person Description 1 (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonId": [
+            "http://wikidata.org/item/Q123456789/ref2017.1",
+            "http://freebase.com/m/987654321/ref2017.1"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonName": [
+            "Person Name 1 (ref2017.1)"
+          ]
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProductInImage": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProductDescription": [
+            "Product Description 1 (ref2017.1)"
+          ],
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProductGTIN": "123456782017.1",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/ProductName": [
+            "Product Name 1 (ref2017.1)"
+          ]
+        }
+      ],
+      "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegistryId": [
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegEntryRole": "Registry Entry Role ID 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegItemId": "Registry Image ID 1 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegOrgId": "Registry Organisation ID 1 (ref2017.1)"
+        },
+        {
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegEntryRole": "Registry Entry Role ID 2 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegItemId": "Registry Image ID 2 (ref2017.1)",
+          "http://iptc.org/std/Iptc4xmpExt/2008-02-29/RegOrgId": "Registry Organisation ID 2 (ref2017.1)"
+        }
+      ],
+      "http://purl.org/dc/elements/1.1/creator": [
+        "Creator1 (ref2017.1)",
+        "Creator2 (ref2017.1)"
+      ],
+      "http://purl.org/dc/elements/1.1/description": [
+        "The description aka caption (ref2017.1)"
+      ],
+      "http://purl.org/dc/elements/1.1/rights": [
+        "Copyright (Notice) 2017.1 IPTC - www.iptc.org  (ref2017.1)"
+      ],
+      "http://purl.org/dc/elements/1.1/subject": [
+        "Keyword1ref2017.1",
+        "Keyword2ref2017.1",
+        "Keyword3ref2017.1"
+      ],
+      "http://purl.org/dc/elements/1.1/title": [
+        "The Title (ref2017.1)"
+      ],
+      "http://ns.adobe.com/photoshop/1.0/AuthorsPosition": "Creator's Job Title  (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/CaptionWriter": "Description Writer (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/City": "City (Core) (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/Country": "Country (Core) (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/Credit": "Credit Line (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/DateCreated": "2017-07-13T17:01:00+00:00",
+      "http://ns.adobe.com/photoshop/1.0/Headline": "The Headline (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/Instructions": "An Instruction (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/Source": "Source (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/State": "Province/State (Core) (ref2017.1)",
+      "http://ns.adobe.com/photoshop/1.0/TransmissionReference": "Job Id (ref2017.1)",
+      "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwner": [
+        {
+          "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwnerID": "Copyright Owner Id 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwnerName": "Copyright Owner Name 1 (ref2017.1)"
+        },
+        {
+          "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwnerID": "Copyright Owner Id 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/CopyrightOwnerName": "Copyright Owner Name 2 (ref2017.1)"
+        }
+      ],
+      "http://ns.useplus.org/ldf/xmp/1.0/ImageCreator": [
+        {
+          "http://ns.useplus.org/ldf/xmp/1.0/ImageCreatorID": "Image Creator Id 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/ImageCreatorName": "Image Creator Name 1 (ref2017.1)"
+        },
+        {
+          "http://ns.useplus.org/ldf/xmp/1.0/ImageCreatorID": "Image Creator Id 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/ImageCreatorName": "Image Creator Name 2 (ref2017.1)"
+        }
+      ],
+      "http://ns.useplus.org/ldf/xmp/1.0/ImageSupplier": [
+        {
+          "http://ns.useplus.org/ldf/xmp/1.0/ImageSupplierID": "Image Supplier Id (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/ImageSupplierName": "Image Supplier Name (ref2017.1)"
+        }
+      ],
+      "http://ns.useplus.org/ldf/xmp/1.0/ImageSupplierImageID": "Image Supplier Image ID (ref2017.1)",
+      "http://ns.useplus.org/ldf/xmp/1.0/Licensor": [
+        {
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorCity": "Licensor City 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorCountry": "Licensor Country 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorEmail": "Licensor Email 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorExtendedAddress": "Licensor Ext Addr 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorID": "Licensor ID 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorName": "Licensor Name 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorPostalCode": "Licensor Postcode 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorRegion": "Licensor Region 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorStreetAddress": "Licensor Street Addr 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorTelephone1": "Licensor Phone1 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorTelephone2": "Licensor Phone2 1 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorURL": "Licensor URL 1 (ref2017.1)"
+        },
+        {
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorCity": "Licensor City 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorCountry": "Licensor Country 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorEmail": "Licensor Email 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorExtendedAddress": "Licensor Ext Addr 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorID": "Licensor ID 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorName": "Licensor Name 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorPostalCode": "Licensor Postcode 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorRegion": "Licensor Region 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorStreetAddress": "Licensor Street Addr 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorTelephone1": "Licensor Phone1 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorTelephone2": "Licensor Phone2 2 (ref2017.1)",
+          "http://ns.useplus.org/ldf/xmp/1.0/LicensorURL": "Licensor URL 2 (ref2017.1)"
+        }
+      ],
+      "http://ns.useplus.org/ldf/xmp/1.0/MinorModelAgeDisclosure": "http://ns.useplus.org/ldf/vocab/AG-A25",
+      "http://ns.useplus.org/ldf/xmp/1.0/ModelReleaseID": [
+        "Model Release ID 1 (ref2017.1)",
+        "Model Release ID 2 (ref2017.1)"
+      ],
+      "http://ns.useplus.org/ldf/xmp/1.0/ModelReleaseStatus": "http://ns.useplus.org/ldf/vocab/MR-NAP",
+      "http://ns.useplus.org/ldf/xmp/1.0/PropertyReleaseID": [
+        "Property Release ID 1 (ref2017.1)",
+        "Property Release ID 2 (ref2017.1)"
+      ],
+      "http://ns.useplus.org/ldf/xmp/1.0/PropertyReleaseStatus": "http://ns.useplus.org/ldf/vocab/PR-NAP",
+      "http://ns.adobe.com/xap/1.0/Rating": "1.0",
+      "http://ns.adobe.com/xap/1.0/rights/UsageTerms": [
+        "Rights Usage Termns (ref2017.1)"
+      ],
+      "http://ns.adobe.com/xap/1.0/rights/WebStatement": "http://www.WebStatementOfRights.org/2017.1"
+    }
   }
 }
