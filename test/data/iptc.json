@@ -16,6 +16,9 @@
     ],
     "Copyright": "Copyright (Notice) 2017.1 IPTC - www.iptc.org  (ref2017.1)"
   },
+  "exif": {},
+  "gps": {},
+  "interoperability": {},
   "xmp": {
     "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CountryCode": "R17",
     "http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/CreatorContactInfo": {

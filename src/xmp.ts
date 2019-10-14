@@ -1,7 +1,8 @@
-const { DOMParser } = require("xmldom");
-const UTF8 = require("utf-8");
+import { DOMParser } from "xmldom";
 
-const NS_XMP = "http://ns.adobe.com/xap/1.0/";
+import { DataReader } from "./datareader";
+import { Metadata, XmpData, XmpType } from "./metadata";
+
 const NS_RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 const NS_XMLNS = "http://www.w3.org/2000/xmlns/";
 
@@ -13,36 +14,37 @@ const RDF_LI = "li";
 
 const ELEMENT_NODE = 1;
 
-module.exports = {
-  NS_XMP,
-};
+function isElement(node: Node): node is HTMLElement {
+  return node.nodeType === ELEMENT_NODE;
+}
 
-function* nodeChildren(element, type) {
+function* elementChildren(element: HTMLElement): Iterable<HTMLElement> {
   let node = element.firstChild;
   while (node) {
-    if (node.nodeType == type) {
+    if (isElement(node)) {
       yield node;
     }
     node = node.nextSibling;
   }
 }
 
-function attributeChildren(element) {
-  // xmldom's Node.attributes seems to be an object rather than an array :(
-  return Object.values(element.attributes);
-}
-
-function* elementChildren(element) {
-  yield* nodeChildren(element, ELEMENT_NODE);
+function* attributeChildren(element: HTMLElement): Iterable<Attr> {
+  for (let i = 0; i < element.attributes.length; i++) {
+    let attr = element.attributes.item(i);
+    if (attr) {
+      yield attr;
+    }
+  }
 }
 
 class XMPParser {
-  constructor(data, metadata){
-    this.data = data;
+  private metadata: XmpData;
+
+  public constructor(metadata: XmpData){
     this.metadata = metadata;
   }
 
-  parseContainer(container, list) {
+  private parseContainer(container: HTMLElement, list: XmpType[]): void {
     for (let child of elementChildren(container)) {
       if (child.namespaceURI == NS_RDF && child.localName == RDF_LI) {
         let children = Array.from(elementChildren(child));
@@ -56,7 +58,10 @@ class XMPParser {
           list.push(value);
           this.parseDescription(next, value);
         } else if (children.length == 0) {
-          list.push(child.textContent);
+          let content = child.textContent;
+          if (content !== null) {
+            list.push(content);
+          }
         } else {
           throw new Error("Complex list item found in RDF.");
         }
@@ -66,7 +71,7 @@ class XMPParser {
     }
   }
 
-  parseDescription(element, parent) {
+  private parseDescription(element: HTMLElement, parent: XmpData): void {
     for (let attribute of attributeChildren(element)) {
       if (attribute.namespaceURI == NS_RDF || attribute.namespaceURI == NS_XMLNS) {
         continue;
@@ -78,29 +83,36 @@ class XMPParser {
     for (let child of elementChildren(element)) {
       let property = `${child.namespaceURI}${child.localName}`;
       let children = Array.from(elementChildren(child));
-      let next = children[0];
-      if (children.length == 1 && next.namespaceURI == NS_RDF) {
+
+      if (children.length == 1 && children[0].namespaceURI == NS_RDF) {
+        let next = children[0];
         if (next.localName == RDF_DESCRIPTION) {
-          parent[property] = {};
-          this.parseDescription(next, parent[property]);
+          let description: XmpData = {};
+          this.parseDescription(next, description);
+          parent[property] = description;
         } else if (next.localName == RDF_SEQ || next.localName == RDF_BAG || next.localName == RDF_ALT) {
-          parent[property] = [];
-          this.parseContainer(next, parent[property]);
+          let container: XmpData[] = [];
+          this.parseContainer(next, container);
+          parent[property] = container;
         } else {
           throw new Error(`Unexpected RDF type in graph: ${next.localName}.`);
         }
       } else if (children.length == 0) {
-        parent[property] = child.textContent;
+        let content = child.textContent;
+        if (content !== null) {
+          parent[property] = content;
+        }
       } else if (child.getAttributeNS(NS_RDF, "parseType") == "Resource") {
-        parent[property] = {};
-        this.parseDescription(child, parent[property]);
+        let description: XmpData = {};
+        this.parseDescription(child, description);
+        parent[property] = description;
       } else {
         throw new Error("Unexpected children in RDF Description.");
       }
     }
   }
 
-  parseRDF(element, parent) {
+  private parseRDF(element: HTMLElement, parent: XmpData): void {
     for (let child of elementChildren(element)) {
       if (child.namespaceURI == NS_RDF && child.localName == RDF_DESCRIPTION) {
         let about = child.getAttributeNS(NS_RDF, "about");
@@ -113,7 +125,7 @@ class XMPParser {
     }
   }
 
-  parseElement(element) {
+  public parseElement(element: HTMLElement): void {
     if (element.namespaceURI == NS_RDF && element.localName == "RDF") {
       this.parseRDF(element, this.metadata);
     } else {
@@ -122,22 +134,15 @@ class XMPParser {
       }
     }
   }
-
-  parse() {
-    // The header is null terminated.
-    let offset = NS_XMP.length + 1;
-    let buffer = new Uint8Array(this.data.buffer, this.data.byteOffset + offset, this.data.byteLength - offset);
-    let text = UTF8.getStringFromBytes(buffer);
-
-    let parser = new DOMParser();
-    let document = parser.parseFromString(text);
-
-    this.parseElement(document.documentElement);
-  }
 }
 
-module.exports.parseXmpData = function parseXmpData(data, metadata) {
-  metadata.xmp = {};
-  let parser = new XMPParser(data, metadata.xmp);
-  parser.parse();
-};
+export async function parseXmpData(reader: DataReader, metadata: Metadata, length: number): Promise<void> {
+  let buffer = Buffer.from(await reader.readData(length));
+  let xml = buffer.toString("utf8");
+
+  let parser = new DOMParser();
+  let document = parser.parseFromString(xml);
+
+  let xmp = new XMPParser(metadata.xmp);
+  xmp.parseElement(document.documentElement);
+}
