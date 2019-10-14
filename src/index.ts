@@ -22,7 +22,7 @@ function buildTags(list: XmpType[], hierarchical: boolean = false): string[][] {
   return filtered.map((t: string) => [t]);
 }
 
-function generateMetadata(raw: RawMetadata, mimetype: string | undefined): Metadata {
+function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
   let metadata: Metadata = {
     mimetype,
     tags: [],

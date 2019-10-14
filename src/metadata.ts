@@ -25,7 +25,7 @@ export interface RawMetadata {
 }
 
 export interface Metadata {
-  mimetype?: string;
+  mimetype: string;
   width?: number;
   height?: number;
   created?: string;
