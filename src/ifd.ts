@@ -224,6 +224,18 @@ async function parseIFD(reader: DataReader, metadata: RawMetadata, tiffOffset: n
       }
     }
 
+    if (exifData === metadata[ExifMetadataType.Thumbnail]) {
+      if (Array.isArray(exifData.ThumbnailOffset) &&
+        exifData.ThumbnailOffset.length === 1 &&
+        Array.isArray(exifData.ThumbnailLength) &&
+        exifData.ThumbnailLength.length === 1) {
+
+        await reader.seek(tiffOffset + exifData.ThumbnailOffset[0]);
+        // eslint-disable-next-line require-atomic-updates
+        metadata.thumbnailData = await reader.readData(exifData.ThumbnailLength[0]);
+      }
+    }
+
     // Seek to the next tag.
     await reader.seek(offset);
   }

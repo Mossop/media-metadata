@@ -28,6 +28,7 @@ export interface RawMetadata {
   [ExifMetadataType.Interoperability]: ExifData;
   [ExifMetadataType.Exif]: ExifData;
   [ExifMetadataType.Thumbnail]: ExifData;
+  thumbnailData?: ArrayBuffer;
   xmp: XmpData;
 }
 
@@ -40,6 +41,8 @@ export interface Metadata {
   tags: string[][];
   longitude?: number;
   latitude?: number;
+
+  thumbnail?: ArrayBuffer;
 
   raw: RawMetadata;
 }
@@ -148,6 +151,10 @@ export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
   let created = choose(resolver.created());
   if (created) {
     metadata.created = created;
+  }
+
+  if (raw.thumbnailData) {
+    metadata.thumbnail = raw.thumbnailData;
   }
 
   if (Array.isArray(raw.gps.GPSLatitude) &&

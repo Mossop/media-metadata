@@ -11,9 +11,28 @@ async function verifyData(basename) {
   let buffer = await fs.readFile(file);
 
   let metadata = await parseBuffer(buffer.buffer);
+
+  file = path.join(DATA_DIR, `${basename}-thumb.jpg`);
+
+  let hasThumb;
+  try {
+    let stats = await fs.stat(file);
+    hasThumb = stats.isFile();
+  } catch (e) {
+    hasThumb = false;
+  }
+
+  expect(!!metadata.thumbnail).toEqual(hasThumb);
+  if (metadata.thumbnail && hasThumb) {
+    let thumb = await fs.readFile(file);
+    expect(thumb.compare(Buffer.from(metadata.thumbnail))).toEqual(0);
+  }
+
+  delete metadata.thumbnail;
+  delete metadata.raw.thumbnailData;
+
   let expected = await fs.readFile(path.join(DATA_DIR, `${basename}.json`), { encoding: `utf-8` });
   expected = JSON.parse(expected);
-  delete metadata.thumbnail;
 
   expect(metadata).toEqual(expected);
 }
