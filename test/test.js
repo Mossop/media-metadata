@@ -42,6 +42,14 @@ describe("Test files", () => {
     await verifyData("iptc");
   });
 
+  it("hierarchical tags", async () => {
+    await verifyData("hierarchy");
+  });
+
+  it("orentiation", async () => {
+    await verifyData("orientation");
+  });
+
   it("lightroom reference", async () => {
     await verifyData("lightroom");
   });

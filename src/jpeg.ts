@@ -1,5 +1,4 @@
 import { DataReader, Alignment } from "./datareader";
-//import { parseXmpData, NS_XMP } from "./xmp";
 import { RawMetadata, newRawMetadata } from "./metadata";
 import { parseIfdData } from "./ifd";
 import { parseXmpData } from "./xmp";

@@ -32,6 +32,17 @@ export interface RawMetadata {
   xmp: XmpData;
 }
 
+export enum Orientation {
+  Normal = 1,
+  Mirror = 2,
+  Rotate180 = 3,
+  MirrorRotate180 = 4,
+  Rotate90Mirror = 5,
+  Rotate270 = 6,
+  Rotate270Mirror = 7,
+  Rotate90 = 8,
+}
+
 export interface Metadata {
   mimetype: string;
   width?: number;
@@ -39,8 +50,10 @@ export interface Metadata {
   created?: string;
 
   tags: string[][];
+  people: string[];
   longitude?: number;
   latitude?: number;
+  orientation: Orientation;
 
   thumbnail?: ArrayBuffer;
 
@@ -80,7 +93,7 @@ class MetaDataResolver {
     this.raw = raw;
   }
 
-  private getXmpString(property: string): string | undefined {
+  public getXmpString(property: string): string | undefined {
     let value = this.raw.xmp[property];
     if (typeof value === "string") {
       return value;
@@ -88,11 +101,11 @@ class MetaDataResolver {
     return undefined;
   }
 
-  private getXmpDate(property: string): string | undefined {
+  public getXmpDate(property: string): string | undefined {
     return this.getXmpString(property);
   }
 
-  private getXmpStrings(property: string): string[] | undefined {
+  public getXmpStrings(property: string): string[] | undefined {
     let value = this.raw.xmp[property];
     if (Array.isArray(value)) {
       return value.filter(isString);
@@ -100,7 +113,15 @@ class MetaDataResolver {
     return undefined;
   }
 
-  private getExifString(property: string): string | undefined {
+  public getExifNumber(property: string): number | undefined {
+    let value = this.raw.exif[property];
+    if (Array.isArray(value) && value.length === 1) {
+      return value[0];
+    }
+    return undefined;
+  }
+
+  public getExifString(property: string): string | undefined {
     let value = this.raw.exif[property];
     if (typeof value === "string") {
       return value;
@@ -108,7 +129,7 @@ class MetaDataResolver {
     return undefined;
   }
 
-  private getExifDate(property: string): string | undefined {
+  public getExifDate(property: string): string | undefined {
     function pad(v: string): string {
       let n = parseInt(v);
       return n.toString().padStart(2, "0");
@@ -137,6 +158,10 @@ class MetaDataResolver {
     tags = this.getXmpStrings("http://purl.org/dc/elements/1.1/subject");
     yield tags ? tags.map((t: string) => [t]) : undefined;
   }
+
+  public *people(): Iterable<string[] | undefined> {
+    yield this.getXmpStrings("http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonInImage");
+  }
 }
 
 export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
@@ -144,7 +169,9 @@ export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
 
   let metadata: Metadata = {
     mimetype,
+    orientation: resolver.getExifNumber("Orientation") || Orientation.Normal,
     tags: choose(resolver.tags()) || [],
+    people: choose(resolver.people()) || [],
     raw,
   };
 
