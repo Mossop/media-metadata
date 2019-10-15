@@ -53,4 +53,8 @@ describe("Test files", () => {
   it("lightroom reference", async () => {
     await verifyData("lightroom");
   });
+
+  it("chair", async () => {
+    await verifyData("chair");
+  });
 });

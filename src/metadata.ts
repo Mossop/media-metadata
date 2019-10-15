@@ -48,6 +48,8 @@ export interface Metadata {
   width?: number;
   height?: number;
   created?: string;
+  title?: string;
+  description?: string;
 
   tags: string[][];
   people: string[];
@@ -105,6 +107,14 @@ class MetaDataResolver {
     return this.getXmpString(property);
   }
 
+  public getFirstXmpString(property: string): string | undefined {
+    let value = this.getXmpStrings(property);
+    if (value && value.length) {
+      return value[0];
+    }
+    return undefined;
+  }
+
   public getXmpStrings(property: string): string[] | undefined {
     let value = this.raw.xmp[property];
     if (Array.isArray(value)) {
@@ -146,6 +156,16 @@ class MetaDataResolver {
     return undefined;
   }
 
+  public *title(): Iterable<string | undefined> {
+    yield this.getFirstXmpString("http://purl.org/dc/elements/1.1/title");
+    return undefined;
+  }
+
+  public *description(): Iterable<string | undefined> {
+    yield this.getFirstXmpString("http://purl.org/dc/elements/1.1/description");
+    return this.getExifString("ImageDescription");
+  }
+
   public *created(): Iterable<string | undefined> {
     yield this.getXmpDate("http://ns.adobe.com/xap/1.0/CreateDate");
     yield this.getExifDate("DateTimeOriginal");
@@ -178,6 +198,16 @@ export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
   let created = choose(resolver.created());
   if (created) {
     metadata.created = created;
+  }
+
+  let description = choose(resolver.description());
+  if (description) {
+    metadata.description = description;
+  }
+
+  let title = choose(resolver.title());
+  if (title) {
+    metadata.title = title;
   }
 
   if (raw.thumbnailData) {
