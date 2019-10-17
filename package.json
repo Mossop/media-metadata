@@ -1,6 +1,6 @@
 {
   "name": "media-metadata",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Extract metadata from various media formats. Currently only supports JPEG images.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
