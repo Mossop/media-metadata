@@ -180,6 +180,14 @@ class MetaDataResolver {
     return undefined;
   }
 
+  public getImageNumber(property: string): number | undefined {
+    let value = this.raw.image[property];
+    if (Array.isArray(value) && value.length === 1) {
+      return value[0];
+    }
+    return undefined;
+  }
+
   public getExifNumber(property: string): number | undefined {
     let value = this.raw.exif[property];
     if (Array.isArray(value) && value.length === 1) {
@@ -248,7 +256,7 @@ export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
     height: raw.height,
     width: raw.width,
     mimetype,
-    orientation: resolver.getExifNumber("Orientation") || Orientation.TopLeft,
+    orientation: resolver.getImageNumber("Orientation") || Orientation.TopLeft,
     tags: choose(resolver.tags()) || [],
     people: choose(resolver.people()) || [],
     raw,

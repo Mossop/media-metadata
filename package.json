@@ -8,7 +8,9 @@
     "build": "tsc -p .",
     "pretest": "tsc -p .",
     "test": "mocha",
-    "prepare": "tsc -p ."
+    "prepare": "tsc -p .",
+    "preparse": "tsc -p .",
+    "parse": "node lib/main.js"
   },
   "repository": {
     "type": "git",
