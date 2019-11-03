@@ -7,10 +7,12 @@ import { parseXmpData } from "./xmp";
 // https://en.wikipedia.org/wiki/JPEG_File_Interchange_Format#File_format_structure
 // https://en.wikipedia.org/wiki/JPEG#Syntax_and_structure
 // https://www.exif.org/Exif2-2.PDF
+// http://vip.sugovica.hu/Sardi/kepnezo/JPEG%20File%20Layout%20and%20Format.htm
 
 const JPEG_SOI = 0xFFD8;
 
 const JPEG_APPX = 0xFFE0;
+const JPEG_SOF = 0xFFC0;
 const JPEG_SOS = 0xFFDA;
 const JPEG_EOI = 0xFFD9;
 
@@ -43,6 +45,16 @@ export async function parseJpegData(reader: DataReader): Promise<RawMetadata> {
         } else if (identifier === "http://ns.adobe.com/xap/1.0/") {
           await parseXmpData(reader, metadata, frameLength - (identifier.length + 1));
         }
+      }
+    }
+
+    if (frameId >= JPEG_SOF && frameId < JPEG_SOF + 0xF) {
+      let type = frameId - JPEG_SOF;
+      if (type !== 0x4 && type !== 0x8 && type !== 0xC) {
+        // This is a valid start of frame.
+        reader.skip(1);
+        metadata.height = await reader.read16();
+        metadata.width = await reader.read16();
       }
     }
 

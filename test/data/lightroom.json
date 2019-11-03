@@ -1,5 +1,7 @@
 {
   "mimetype": "image/jpeg",
+  "width": 500,
+  "height": 331,
   "created": "2018-08-22T18:51:25.80",
   "orientation": 1,
 
@@ -13,6 +15,8 @@
   "longitude": -121.51778166666666,
 
   "raw": {
+    "width": 500,
+    "height": 331,
     "image": {
       "Artist": "Dave Townsend",
       "Make": "NIKON CORPORATION",

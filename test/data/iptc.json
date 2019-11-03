@@ -1,5 +1,7 @@
 {
   "mimetype": "image/jpeg",
+  "width": 1000,
+  "height": 500,
   "orientation": 1,
   "title": "The Title (ref2017.1)",
   "description": "The description aka caption (ref2017.1)",
@@ -15,6 +17,8 @@
   ],
 
   "raw": {
+    "width": 1000,
+    "height": 500,
     "image": {
       "ImageDescription": "The description aka caption (ref2017.1)",
       "XResolution": [

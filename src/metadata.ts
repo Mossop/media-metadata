@@ -23,6 +23,8 @@ export type LinkedMetadataBlocks =
   ExifMetadataType.Exif;
 
 export interface RawMetadata {
+  height?: number;
+  width?: number;
   [ExifMetadataType.Image]: ExifData;
   [ExifMetadataType.Gps]: ExifData;
   [ExifMetadataType.Interoperability]: ExifData;
@@ -32,15 +34,70 @@ export interface RawMetadata {
   xmp: XmpData;
 }
 
+/**
+ * Describes the orientation of the image with two sides. The first side is
+ * the side represented by the zeroth row. The second side is the side
+ * represented by the zeroth column.
+ */
 export enum Orientation {
-  Normal = 1,
-  Mirror = 2,
-  Rotate180 = 3,
-  MirrorRotate180 = 4,
-  Rotate90Mirror = 5,
-  Rotate270 = 6,
-  Rotate270Mirror = 7,
-  Rotate90 = 8,
+  TopLeft = 1,
+  TopRight = 2,
+  BottomRight = 3,
+  BottomLeft = 4,
+  LeftTop = 5,
+  RightTop = 6,
+  RightBottom = 7,
+  LeftBottom = 8,
+}
+
+export function rotateClockwise90(orientation: Orientation = Orientation.TopLeft): Orientation {
+  switch (orientation) {
+    case Orientation.TopLeft:
+      return Orientation.RightTop;
+    case Orientation.TopRight:
+      return Orientation.RightBottom;
+    case Orientation.BottomRight:
+      return Orientation.LeftBottom;
+    case Orientation.BottomLeft:
+      return Orientation.LeftTop;
+    case Orientation.LeftTop:
+      return Orientation.TopRight;
+    case Orientation.RightTop:
+      return Orientation.BottomRight;
+    case Orientation.RightBottom:
+      return Orientation.BottomLeft;
+    case Orientation.LeftBottom:
+      return Orientation.TopLeft;
+  }
+}
+
+export function rotateCounterClockwise90(orientation: Orientation = Orientation.TopLeft): Orientation {
+  return rotateClockwise90(rotateClockwise90(rotateClockwise90(orientation)));
+}
+
+export function mirrorHorizontal(orientation: Orientation = Orientation.TopLeft): Orientation {
+  switch (orientation) {
+    case Orientation.TopLeft:
+      return Orientation.TopRight;
+    case Orientation.TopRight:
+      return Orientation.TopLeft;
+    case Orientation.BottomRight:
+      return Orientation.BottomLeft;
+    case Orientation.BottomLeft:
+      return Orientation.BottomRight;
+    case Orientation.LeftTop:
+      return Orientation.RightTop;
+    case Orientation.RightTop:
+      return Orientation.LeftTop;
+    case Orientation.RightBottom:
+      return Orientation.LeftBottom;
+    case Orientation.LeftBottom:
+      return Orientation.RightBottom;
+  }
+}
+
+export function mirrorVertical(orientation: Orientation = Orientation.TopLeft): Orientation {
+  return rotateCounterClockwise90(mirrorHorizontal(rotateClockwise90(orientation)));
 }
 
 export interface Metadata {
@@ -188,8 +245,10 @@ export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
   let resolver = new MetaDataResolver(raw);
 
   let metadata: Metadata = {
+    height: raw.height,
+    width: raw.width,
     mimetype,
-    orientation: resolver.getExifNumber("Orientation") || Orientation.Normal,
+    orientation: resolver.getExifNumber("Orientation") || Orientation.TopLeft,
     tags: choose(resolver.tags()) || [],
     people: choose(resolver.people()) || [],
     raw,

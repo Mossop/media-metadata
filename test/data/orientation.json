@@ -3,11 +3,15 @@
   "latitude": 38.435805,
   "longitude": -122.711572,
   "mimetype": "image/jpeg",
+  "width": 3072,
+  "height": 4096,
   "orientation": 1,
   "people": [],
   "tags": [],
 
   "raw": {
+    "width": 3072,
+    "height": 4096,
     "exif": {
       "ApertureValue": [
         1.69

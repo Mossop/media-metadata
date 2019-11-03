@@ -2,6 +2,8 @@
   "created": "2019-04-14T20:59:58.396143",
   "latitude": 45.546858971666666,
   "longitude": -122.62157997166666,
+  "height": 375,
+  "width": 500,
   "mimetype": "image/jpeg",
   "orientation": 1,
   "tags": [
@@ -10,6 +12,8 @@
   "people": [],
 
   "raw": {
+    "height": 375,
+    "width": 500,
     "exif": {
       "36880": "-07:00",
       "ApertureValue": [
