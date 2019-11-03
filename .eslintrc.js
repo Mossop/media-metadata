@@ -25,6 +25,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
   ],
   "rules": {
+    "require-atomic-updates": "off",
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/no-unnecessary-condition": ["error", {
       ignoreRhs: true

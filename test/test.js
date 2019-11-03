@@ -6,8 +6,8 @@ const { parseBuffer } = require("../lib");
 
 const DATA_DIR = path.join(__dirname, "data");
 
-async function verifyData(basename) {
-  let file = path.join(DATA_DIR, `${basename}.jpg`);
+async function verifyData(basename, extension) {
+  let file = path.join(DATA_DIR, `${basename}.${extension}`);
   let buffer = await fs.readFile(file);
 
   let metadata = await parseBuffer(buffer.buffer);
@@ -37,24 +37,34 @@ async function verifyData(basename) {
   expect(metadata).toEqual(expected);
 }
 
-describe("Test files", () => {
+describe("Images", () => {
   it("iptc reference", async () => {
-    await verifyData("iptc");
+    await verifyData("iptc", "jpg");
   });
 
   it("hierarchical tags", async () => {
-    await verifyData("hierarchy");
+    await verifyData("hierarchy", "jpg");
   });
 
-  it("orentiation", async () => {
-    await verifyData("orientation");
+  it("orientiation", async () => {
+    await verifyData("orientation", "jpg");
   });
 
   it("lightroom reference", async () => {
-    await verifyData("lightroom");
+    await verifyData("lightroom", "jpg");
   });
 
   it("chair", async () => {
-    await verifyData("chair");
+    await verifyData("chair", "jpg");
+  });
+});
+
+describe("Videos", () => {
+  it("horizontal", async () => {
+    await verifyData("horizontal", "mp4");
+  });
+
+  it("vertical", async () => {
+    await verifyData("vertical", "mp4");
   });
 });

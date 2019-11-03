@@ -6,6 +6,7 @@
   "tags": [],
   "people": [],
   "raw": {
+    "mp4Data": {},
     "image": {
       "Make": "NIKON",
       "Model": "COOLPIX S630\u0000",
@@ -3687,7 +3688,8 @@
     "height": 3000,
     "width": 4000
   },
-  "created": "2010-07-11T12:34:27-07:00",
+  "created": "2010-07-11T19:34:27.000Z",
+  "modified": "2010-07-11T19:34:27.000Z",
   "latitude": 49.2384878,
   "longitude": -123.12874548333333
 }

@@ -2,7 +2,8 @@
   "mimetype": "image/jpeg",
   "width": 500,
   "height": 331,
-  "created": "2018-08-22T18:51:25.80",
+  "created": "2018-08-23T01:51:25.800Z",
+  "modified": "2018-09-12T04:51:01.000Z",
   "orientation": 1,
 
   "tags": [
@@ -17,6 +18,7 @@
   "raw": {
     "width": 500,
     "height": 331,
+    "mp4Data": {},
     "image": {
       "Artist": "Dave Townsend",
       "Make": "NIKON CORPORATION",

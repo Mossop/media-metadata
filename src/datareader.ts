@@ -38,6 +38,7 @@ export abstract class DataReader {
   public abstract read8(peek?: boolean): Promise<number>;
   public abstract read16(peek?: boolean): Promise<number>;
   public abstract read32(peek?: boolean): Promise<number>;
+  public abstract read64(peek?: boolean): Promise<number>;
   public abstract readSigned8(peek?: boolean): Promise<number>;
   public abstract readSigned16(peek?: boolean): Promise<number>;
   public abstract readSigned32(peek?: boolean): Promise<number>;
@@ -65,6 +66,21 @@ export abstract class DataReader {
     // Failed to find a string.
     await this.seek(offset);
     return undefined;
+  }
+
+  public async readChars(length: number, peek: boolean = false): Promise<string> {
+    let offset = this.offset;
+    let chars: number[] = [];
+
+    for (let i = 0; i < length; i++) {
+      chars.push(await this.read8());
+    }
+
+    if (peek) {
+      await this.seek(offset);
+    }
+
+    return String.fromCharCode(...chars);
   }
 }
 
@@ -127,6 +143,22 @@ export class DataViewReader extends DataReader {
     }
 
     return value;
+  }
+
+  public async read64(peek: boolean = false): Promise<number> {
+    this.assertAvailable(8);
+    let first = this.data.getUint32(this._offset, this.alignment == Alignment.LittleEndian);
+    let second = this.data.getUint32(this._offset + 4, this.alignment == Alignment.LittleEndian);
+
+    if (!peek) {
+      this._offset += 8;
+    }
+
+    if (this.alignment == Alignment.BigEndian) {
+      return first << 32 + second;
+    } else {
+      return second << 32 + first;
+    }
   }
 
   public async readSigned8(peek: boolean = false): Promise<number> {

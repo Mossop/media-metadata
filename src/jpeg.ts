@@ -20,6 +20,7 @@ const JPEG_SOS = 0xFFDA;
 const JPEG_EOI = 0xFFD9;
 
 export async function isJPEG(reader: DataReader): Promise<boolean> {
+  reader.alignment = Alignment.BigEndian;
   if (JPEG_SOI !== await reader.read16()) {
     return false;
   }
@@ -35,6 +36,7 @@ export async function isJPEG(reader: DataReader): Promise<boolean> {
 }
 
 export async function parseJpegData(reader: DataReader): Promise<RawMetadata> {
+  reader.alignment = Alignment.BigEndian;
   let metadata: RawMetadata = newRawMetadata();
 
   let soi = await reader.read16();

@@ -1,0 +1,75 @@
+{
+  "duration": 2.66,
+  "mimetype": "video/mp4",
+  "orientation": 1,
+  "tags": [],
+  "people": [],
+  "raw": {
+    "image": {},
+    "gps": {},
+    "interoperability": {},
+    "exif": {},
+    "thumbnail": {},
+    "mp4Data": {
+      "created": "2019-11-03T23:07:26.000Z",
+      "modified": "2019-11-03T23:07:26.000Z",
+      "duration": 2660,
+      "timescale": 1000,
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "latitude": 45.5484,
+      "longitude": -122.5484,
+      "tracks": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "created": "2019-11-03T23:07:26.000Z",
+          "modified": "2019-11-03T23:07:26.000Z",
+          "duration": 2660
+        },
+        {
+          "width": 0,
+          "height": 0,
+          "matrix": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "created": "2019-11-03T23:07:26.000Z",
+          "modified": "2019-11-03T23:07:26.000Z",
+          "duration": 2605
+        }
+      ]
+    },
+    "xmp": {},
+    "duration": 2.66
+  },
+  "latitude": 45.5484,
+  "longitude": -122.5484
+}

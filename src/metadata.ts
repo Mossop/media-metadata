@@ -1,3 +1,5 @@
+import moment = require("moment");
+
 export type ExifData = {
   [tag: string]: string | number[];
   [tag: number]: string | number[];
@@ -22,7 +24,28 @@ export type LinkedMetadataBlocks =
   ExifMetadataType.Interoperability |
   ExifMetadataType.Exif;
 
+export interface MP4TrackData {
+  matrix: number[];
+  width: number;
+  height: number;
+  created: string;
+  modified: string;
+  duration: number;
+}
+
+export interface MP4MovieData {
+  matrix?: number[];
+  created?: string;
+  modified?: string;
+  duration?: number;
+  timescale?: number;
+  longitude?: number;
+  latitude?: number;
+  tracks?: MP4TrackData[];
+}
+
 export interface RawMetadata {
+  duration?: number;
   height?: number;
   width?: number;
   [ExifMetadataType.Image]: ExifData;
@@ -30,6 +53,7 @@ export interface RawMetadata {
   [ExifMetadataType.Interoperability]: ExifData;
   [ExifMetadataType.Exif]: ExifData;
   [ExifMetadataType.Thumbnail]: ExifData;
+  mp4Data: MP4MovieData;
   thumbnailData?: ArrayBuffer;
   xmp: XmpData;
 }
@@ -104,7 +128,9 @@ export interface Metadata {
   mimetype: string;
   width?: number;
   height?: number;
+  duration?: number;
   created?: string;
+  modified?: string;
   title?: string;
   description?: string;
 
@@ -126,11 +152,12 @@ export function newRawMetadata(): RawMetadata {
     [ExifMetadataType.Interoperability]: {},
     [ExifMetadataType.Exif]: {},
     [ExifMetadataType.Thumbnail]: {},
+    mp4Data: {},
     xmp: {},
   };
 }
 
-const EXIF_DATE_REGEX = /^(\d+):(\d+):(\d+) (\d+):(\d+):(\d+)$/;
+const EXIF_DATE_FORMAT = "YYYY:MM:DD HH:mm:ss Z";
 
 function isString(i: XmpType): i is string {
   return typeof i === "string";
@@ -161,7 +188,11 @@ class MetaDataResolver {
   }
 
   public getXmpDate(property: string): string | undefined {
-    return this.getXmpString(property);
+    let value = this.getXmpString(property);
+    if (value) {
+      return moment(value).utc().toISOString();
+    }
+    return undefined;
   }
 
   public getFirstXmpString(property: string): string | undefined {
@@ -205,18 +236,9 @@ class MetaDataResolver {
   }
 
   public getExifDate(property: string): string | undefined {
-    function pad(v: string): string {
-      let n = parseInt(v);
-      return n.toString().padStart(2, "0");
-    }
-
     let value = this.getExifString(property);
     if (value) {
-      let matches = EXIF_DATE_REGEX.exec(value);
-      if (matches) {
-        const [, year, month, day, hour, minute, second] = matches;
-        return `${year}-${pad(month)}-${pad(day)}T${pad(hour)}:${pad(minute)}:${pad(second)}`;
-      }
+      return moment(value + " Z", EXIF_DATE_FORMAT).toISOString();
     }
     return undefined;
   }
@@ -234,7 +256,14 @@ class MetaDataResolver {
   public *created(): Iterable<string | undefined> {
     yield this.getXmpDate("http://ns.adobe.com/xap/1.0/CreateDate");
     yield this.getExifDate("DateTimeOriginal");
-    return this.getExifDate("CreateDate");
+    yield this.getExifDate("CreateDate");
+    return this.raw.mp4Data.created;
+  }
+
+  public *modified(): Iterable<string | undefined> {
+    yield this.getXmpDate("http://ns.adobe.com/xap/1.0/ModifyDate");
+    yield this.getExifDate("ModifyDate");
+    return this.raw.mp4Data.modified;
   }
 
   public *tags(): Iterable<string[][] | undefined> {
@@ -253,35 +282,25 @@ export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
   let resolver = new MetaDataResolver(raw);
 
   let metadata: Metadata = {
+    created: choose(resolver.created()),
+    modified: choose(resolver.modified()),
+    duration: raw.duration,
+    description: choose(resolver.description()),
+    title: choose(resolver.title()),
     height: raw.height,
     width: raw.width,
     mimetype,
     orientation: resolver.getImageNumber("Orientation") || Orientation.TopLeft,
     tags: choose(resolver.tags()) || [],
     people: choose(resolver.people()) || [],
+    thumbnail: raw.thumbnailData,
     raw,
   };
 
-  let created = choose(resolver.created());
-  if (created) {
-    metadata.created = created;
-  }
-
-  let description = choose(resolver.description());
-  if (description) {
-    metadata.description = description;
-  }
-
-  let title = choose(resolver.title());
-  if (title) {
-    metadata.title = title;
-  }
-
-  if (raw.thumbnailData) {
-    metadata.thumbnail = raw.thumbnailData;
-  }
-
-  if (Array.isArray(raw.gps.GPSLatitude) &&
+  if (raw.mp4Data.longitude !== undefined && raw.mp4Data.latitude !== undefined) {
+    metadata.latitude = raw.mp4Data.latitude;
+    metadata.longitude = raw.mp4Data.longitude;
+  } else if (Array.isArray(raw.gps.GPSLatitude) &&
     typeof raw.gps.GPSLatitudeRef === "string" &&
     Array.isArray(raw.gps.GPSLongitude) &&
     typeof raw.gps.GPSLongitudeRef === "string") {
