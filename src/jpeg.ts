@@ -10,11 +10,29 @@ import { parseXmpData } from "./xmp";
 // http://vip.sugovica.hu/Sardi/kepnezo/JPEG%20File%20Layout%20and%20Format.htm
 
 const JPEG_SOI = 0xFFD8;
+const JFIF_IDENTIFIER = "JFIF";
+const EXIF_IDENTIFIER = "Exif";
+const XMP_IDENTIFIER = "http://ns.adobe.com/xap/1.0/";
 
 const JPEG_APPX = 0xFFE0;
 const JPEG_SOF = 0xFFC0;
 const JPEG_SOS = 0xFFDA;
 const JPEG_EOI = 0xFFD9;
+
+export async function isJPEG(reader: DataReader): Promise<boolean> {
+  if (JPEG_SOI !== await reader.read16()) {
+    return false;
+  }
+
+  let frame = await reader.read16();
+  if (frame < JPEG_APPX || frame > JPEG_APPX + 0xF) {
+    return false;
+  }
+
+  let frameLength = await reader.read16() - 2;
+  let identifier = await reader.readStr(frameLength);
+  return identifier === JFIF_IDENTIFIER || identifier === EXIF_IDENTIFIER;
+}
 
 export async function parseJpegData(reader: DataReader): Promise<RawMetadata> {
   let metadata: RawMetadata = newRawMetadata();
@@ -40,9 +58,9 @@ export async function parseJpegData(reader: DataReader): Promise<RawMetadata> {
       let identifier = await reader.readStr(frameLength);
 
       if (app === 1) {
-        if (identifier === "Exif") {
+        if (identifier === EXIF_IDENTIFIER) {
           await parseIfdData(reader, metadata);
-        } else if (identifier === "http://ns.adobe.com/xap/1.0/") {
+        } else if (identifier === XMP_IDENTIFIER) {
           await parseXmpData(reader, metadata, frameLength - (identifier.length + 1));
         }
       }
