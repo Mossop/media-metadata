@@ -1,10 +1,16 @@
 {
-  "duration": 1.74,
   "mimetype": "video/mp4",
-  "orientation": 1,
+  "orientation": 6,
   "tags": [],
   "people": [],
+  "created": "2019-11-03T23:07:19.000Z",
+  "modified": "2019-11-03T23:07:19.000Z",
+  "duration": 1.74,
+  "width": 1920,
+  "height": 1080,
   "raw": {
+    "width": 1920,
+    "height": 1080,
     "image": {},
     "gps": {},
     "interoperability": {},
@@ -26,6 +32,12 @@
         0,
         1
       ],
+      "orientation": 1,
+      "qtMetadata": {
+        "mdta:com.android.manufacturer": "motorola",
+        "mdta:com.android.model": "moto g(7)",
+        "mdta:com.android.version": "9"
+      },
       "latitude": 45.5484,
       "longitude": -122.5484,
       "tracks": [
@@ -36,13 +48,14 @@
             0,
             1,
             0,
-            65535,
+            -1,
             0,
             0,
             0,
             0,
             1
           ],
+          "orientation": 6,
           "created": "2019-11-03T23:07:19.000Z",
           "modified": "2019-11-03T23:07:19.000Z",
           "duration": 1740
@@ -61,6 +74,7 @@
             0,
             1
           ],
+          "orientation": 1,
           "created": "2019-11-03T23:07:19.000Z",
           "modified": "2019-11-03T23:07:19.000Z",
           "duration": 1686

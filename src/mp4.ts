@@ -1,7 +1,7 @@
 import moment from "moment";
 
 import { DataReader, Alignment } from "./datareader";
-import { RawMetadata, newRawMetadata, MP4TrackData, QTMetadata } from "./metadata";
+import { RawMetadata, newRawMetadata, MP4TrackData, QTMetadata, Orientation } from "./metadata";
 import { MP4_TYPE, parseXmpData } from "./xmp";
 
 // http://standards.iso.org/ittf/PubliclyAvailableStandards/c068960_ISO_IEC_14496-12_2015.zip
@@ -41,6 +41,37 @@ const CONTAINER_TYPES = [
   "mere",
 ];
 
+const ORIENTATION_MAP = [
+  { orientation: Orientation.TopLeft, matrix: [1, 0, 0, 0, 1, 0, 0, 0, 1] },
+  { orientation: Orientation.TopRight, matrix: [-1, 0, 0, 0, 1, 0, 0, 0, 1] },
+  { orientation: Orientation.BottomLeft, matrix: [1, 0, 0, 0, -1, 0, 0, 0, 1] },
+  { orientation: Orientation.BottomRight, matrix: [-1, 0, 0, 0, -1, 0, 0, 0, 1] },
+  { orientation: Orientation.LeftTop, matrix: [0, 1, 0, 1, 0, 0, 0, 0, 1] },
+  { orientation: Orientation.LeftBottom, matrix: [0, -1, 0, 1, 0, 0, 0, 0, 1] },
+  { orientation: Orientation.RightTop, matrix: [0, 1, 0, -1, 0, 0, 0, 0, 1] },
+  { orientation: Orientation.RightBottom, matrix: [0, -1, 0, -1, 0, 0, 0, 0, 1] },
+];
+
+function equals(a: number[], b: number[]): boolean {
+  for (let i = 0; i < 9; i++) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function findOrientation(found: number[]): Orientation | undefined {
+  for (let { orientation, matrix } of ORIENTATION_MAP) {
+    if (equals(matrix, found)) {
+      return orientation;
+    }
+  }
+
+  return undefined;
+}
+
 interface BoxHeader {
   size: number;
   type: string;
@@ -52,6 +83,50 @@ interface BoxHeader {
 interface BoxVersion {
   version: number;
   flags: number;
+}
+
+function multiplyMatrix(a: number[], b: number[]): number[] {
+  const mult = (line: number, col: number): number => {
+    return a[(line * 3) + 0] * b[col + 0] +
+      a[(line * 3) + 1] * b[col + 3] +
+      a[(line * 3) + 2] * b[col + 6];
+  };
+
+  return [
+    mult(0, 0),
+    mult(0, 1),
+    mult(0, 2),
+    mult(1, 0),
+    mult(1, 1),
+    mult(1, 2),
+    mult(2, 0),
+    mult(2, 1),
+    mult(2, 2),
+  ];
+}
+
+async function readMatrix(reader: DataReader): Promise<number[]> {
+  const read1616 = async (): Promise<number> => {
+    return await reader.readSigned32() / Math.pow(2, 16);
+  };
+
+  const read230 = async (): Promise<number> => {
+    return await reader.readSigned32() / Math.pow(2, 30);
+  };
+
+  let matrix = [
+    await read1616(),
+    await read1616(),
+    await read230(),
+    await read1616(),
+    await read1616(),
+    await read230(),
+    await read1616(),
+    await read1616(),
+    await read230(),
+  ];
+
+  return matrix;
 }
 
 async function readBoxHeader(reader: DataReader, end: number = reader.length): Promise<BoxHeader> {
@@ -138,20 +213,13 @@ async function parseTrackHeader(metadata: RawMetadata, reader: DataReader): Prom
   }
 
   await reader.skip(16);
-  let matrix: number[] = [
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 30),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 30),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 30),
-  ];
-
+  let matrix = await readMatrix(reader);
   let width = await reader.read32() / Math.pow(2, 16);
   let height = await reader.read32() / Math.pow(2, 16);
+
+  if (metadata.mp4Data.matrix) {
+    matrix = multiplyMatrix(matrix, metadata.mp4Data.matrix);
+  }
 
   let track: MP4TrackData = {
     width,
@@ -160,12 +228,25 @@ async function parseTrackHeader(metadata: RawMetadata, reader: DataReader): Prom
     created: moment(EPOCH).add(created, "seconds").toISOString(),
     modified: moment(EPOCH).add(modified, "seconds").toISOString(),
     duration,
+    orientation: findOrientation(matrix),
   };
 
   if (metadata.mp4Data.tracks) {
     metadata.mp4Data.tracks.push(track);
   } else {
     metadata.mp4Data.tracks = [track];
+  }
+
+  if (metadata.width === undefined) {
+    metadata.width = width;
+  } else {
+    metadata.width = Math.max(metadata.width, width);
+  }
+
+  if (metadata.height === undefined) {
+    metadata.height = height;
+  } else {
+    metadata.height = Math.max(metadata.height, height);
   }
 }
 
@@ -194,17 +275,8 @@ async function parseMovieHeader(metadata: RawMetadata, reader: DataReader): Prom
 
   await reader.skip(16);
 
-  metadata.mp4Data.matrix = [
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 30),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 30),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 16),
-    await reader.read32() / Math.pow(2, 30),
-  ];
+  metadata.mp4Data.matrix = await readMatrix(reader);
+  metadata.mp4Data.orientation = findOrientation(metadata.mp4Data.matrix);
 }
 
 async function parseXYZBox(header: BoxHeader, metadata: RawMetadata, reader: DataReader): Promise<void> {
@@ -314,7 +386,6 @@ async function parseMetadata(metadata: RawMetadata, reader: DataReader, end: num
     let size = await reader.read32();
     let namespace = await reader.readChars(4);
     let value = await reader.readChars(size - 8);
-    console.log(value);
     items.push(`${namespace}:${value}`);
   }
 

@@ -31,6 +31,7 @@ export interface MP4TrackData {
   created: string;
   modified: string;
   duration: number;
+  orientation?: Orientation;
 }
 
 export type QTMetadata = {
@@ -45,6 +46,7 @@ export interface MP4MovieData {
   timescale?: number;
   longitude?: number;
   latitude?: number;
+  orientation?: Orientation;
   tracks?: MP4TrackData[];
   qtMetadata?: QTMetadata;
 }
@@ -143,7 +145,7 @@ export interface Metadata {
   people: string[];
   longitude?: number;
   latitude?: number;
-  orientation: Orientation;
+  orientation?: Orientation;
 
   thumbnail?: ArrayBuffer;
 
@@ -250,25 +252,24 @@ class MetaDataResolver {
 
   public *title(): Iterable<string | undefined> {
     yield this.getFirstXmpString("http://purl.org/dc/elements/1.1/title");
-    return undefined;
   }
 
   public *description(): Iterable<string | undefined> {
     yield this.getFirstXmpString("http://purl.org/dc/elements/1.1/description");
-    return this.getExifString("ImageDescription");
+    yield this.getExifString("ImageDescription");
   }
 
   public *created(): Iterable<string | undefined> {
     yield this.getXmpDate("http://ns.adobe.com/xap/1.0/CreateDate");
     yield this.getExifDate("DateTimeOriginal");
     yield this.getExifDate("CreateDate");
-    return this.raw.mp4Data.created;
+    yield this.raw.mp4Data.created;
   }
 
   public *modified(): Iterable<string | undefined> {
     yield this.getXmpDate("http://ns.adobe.com/xap/1.0/ModifyDate");
     yield this.getExifDate("ModifyDate");
-    return this.raw.mp4Data.modified;
+    yield this.raw.mp4Data.modified;
   }
 
   public *tags(): Iterable<string[][] | undefined> {
@@ -281,26 +282,41 @@ class MetaDataResolver {
   public *people(): Iterable<string[] | undefined> {
     yield this.getXmpStrings("http://iptc.org/std/Iptc4xmpExt/2008-02-29/PersonInImage");
   }
+
+  public *orientation(): Iterable<Orientation | undefined> {
+    yield this.getImageNumber("Orientation");
+    if (this.raw.mp4Data.tracks) {
+      yield* this.raw.mp4Data.tracks.map((t: MP4TrackData) => t.orientation);
+    }
+    yield this.raw.mp4Data.orientation;
+  }
+}
+
+function set<P extends keyof Metadata>(metadata: Metadata, prop: P, value: Metadata[P]): void {
+  if (value !== undefined) {
+    metadata[prop] = value;
+  }
 }
 
 export function generateMetadata(raw: RawMetadata, mimetype: string): Metadata {
   let resolver = new MetaDataResolver(raw);
 
   let metadata: Metadata = {
-    created: choose(resolver.created()),
-    modified: choose(resolver.modified()),
-    duration: raw.duration,
-    description: choose(resolver.description()),
-    title: choose(resolver.title()),
-    height: raw.height,
-    width: raw.width,
     mimetype,
-    orientation: resolver.getImageNumber("Orientation") || Orientation.TopLeft,
     tags: choose(resolver.tags()) || [],
     people: choose(resolver.people()) || [],
-    thumbnail: raw.thumbnailData,
     raw,
   };
+
+  set(metadata, "created", choose(resolver.created()));
+  set(metadata, "modified", choose(resolver.modified()));
+  set(metadata, "height", raw.height);
+  set(metadata, "width", raw.width);
+  set(metadata, "duration", raw.duration);
+  set(metadata, "title", choose(resolver.title()));
+  set(metadata, "description", choose(resolver.description()));
+  set(metadata, "orientation", choose(resolver.orientation()));
+  set(metadata, "thumbnail", raw.thumbnailData);
 
   if (raw.mp4Data.longitude !== undefined && raw.mp4Data.latitude !== undefined) {
     metadata.latitude = raw.mp4Data.latitude;
