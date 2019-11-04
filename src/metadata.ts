@@ -33,6 +33,10 @@ export interface MP4TrackData {
   duration: number;
 }
 
+export type QTMetadata = {
+  [key: string]: string;
+};
+
 export interface MP4MovieData {
   matrix?: number[];
   created?: string;
@@ -42,6 +46,7 @@ export interface MP4MovieData {
   longitude?: number;
   latitude?: number;
   tracks?: MP4TrackData[];
+  qtMetadata?: QTMetadata;
 }
 
 export interface RawMetadata {

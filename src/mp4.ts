@@ -1,8 +1,12 @@
 import moment from "moment";
 
 import { DataReader, Alignment } from "./datareader";
-import { RawMetadata, newRawMetadata, MP4TrackData } from "./metadata";
+import { RawMetadata, newRawMetadata, MP4TrackData, QTMetadata } from "./metadata";
 import { MP4_TYPE, parseXmpData } from "./xmp";
+
+// http://standards.iso.org/ittf/PubliclyAvailableStandards/c068960_ISO_IEC_14496-12_2015.zip
+// https://developer.apple.com/library/archive/documentation/QuickTime/QTFF/Metadata/Metadata.html
+// http://www.cimarronsystems.com/wp-content/uploads/2017/04/Elements-of-the-H.264-VideoAAC-Audio-MP4-Movie-v2_0.pdf
 
 /*function translate([p, q]: number[], [a, b, u, c, d, v, x, y, w]: number[]): [number, number] {
   let m = a * p + c * q + x;
@@ -40,6 +44,7 @@ const CONTAINER_TYPES = [
 interface BoxHeader {
   size: number;
   type: string;
+  offset: number;
   length: number;
   nextBox: number;
 }
@@ -77,6 +82,7 @@ async function readBoxHeader(reader: DataReader, end: number = reader.length): P
   return {
     size,
     type,
+    offset: reader.offset,
     length: nextBox - reader.offset,
     nextBox,
   };
@@ -269,17 +275,90 @@ async function parseXYZBox(header: BoxHeader, metadata: RawMetadata, reader: Dat
   metadata.mp4Data.longitude = degrees;
 }
 
+async function parseMetadata(metadata: RawMetadata, reader: DataReader, end: number): Promise<void> {
+  let handler: BoxHeader | undefined = undefined;
+  let keys: BoxHeader | undefined = undefined;
+  let list: BoxHeader | undefined = undefined;
+
+  while (reader.offset < end) {
+    let box = await readBoxHeader(reader);
+    if (box.type === "hdlr") {
+      handler = box;
+    } else if (box.type === "keys") {
+      keys = box;
+    } else if (box.type === "ilst") {
+      list = box;
+    }
+
+    await reader.seek(box.nextBox);
+  }
+
+  if (!handler || !keys || !list) {
+    console.warn("Metadata section was missing required contents.");
+    return;
+  }
+
+  await reader.seek(handler.offset + 8);
+  let type = await reader.readChars(4);
+  if (type !== "mdta") {
+    console.warn("Unknown metadata type.");
+    return;
+  }
+
+  let items: string[] = [];
+  let data: QTMetadata = {};
+
+  await reader.seek(keys.offset + 4);
+  let count = await reader.read32();
+  for (let i = 0; i < count; i++) {
+    let size = await reader.read32();
+    let namespace = await reader.readChars(4);
+    let value = await reader.readChars(size - 8);
+    console.log(value);
+    items.push(`${namespace}:${value}`);
+  }
+
+  await reader.seek(list.offset);
+  while (reader.offset < list.nextBox) {
+    let box = await readBoxHeader(reader);
+    let index =
+      (box.type.charCodeAt(0) << 24) +
+      (box.type.charCodeAt(1) << 16) +
+      (box.type.charCodeAt(2) << 8) +
+      box.type.charCodeAt(3);
+
+    while (reader.offset < box.nextBox) {
+      let dataBox = await readBoxHeader(reader);
+      if (dataBox.type === "data") {
+        let type = await reader.read32();
+        let locale = await reader.read32();
+        if (type === 1 && locale === 0) {
+          data[items[index - 1]] = await reader.readChars(dataBox.length - 8);
+        }
+      }
+
+      await reader.seek(dataBox.nextBox);
+    }
+
+    await reader.seek(box.nextBox);
+  }
+
+  metadata.mp4Data.qtMetadata = data;
+}
+
 async function parseBoxes(metadata: RawMetadata, reader: DataReader, end: number = reader.length, parents: string[] = []): Promise<void> {
   while ((end - reader.offset) >= 8) {
     let header = await readBoxHeader(reader, end);
     let type = parents.slice(0);
     type.push(header.type);
-    console.log(type);
+    let path = type.join("/");
 
+    if (path === "moov/meta") {
+      await parseMetadata(metadata, reader, header.nextBox);
+    }
     if (CONTAINER_TYPES.includes(header.type)) {
       await parseBoxes(metadata, reader, header.nextBox, type);
     } else {
-      let path = type.join("/");
       if (path === "moov/mvhd") {
         await parseMovieHeader(metadata, reader);
       } else if (path === "moov/trak/tkhd") {
