@@ -1,7 +1,7 @@
 import { DOMParser } from "xmldom";
 
 import { DataReader } from "./datareader";
-import { RawMetadata, XmpData, XmpType } from "./metadata";
+import { RawMetadata, XmpData, XmpType } from "./types";
 
 export const MP4_TYPE = "{be7acfcb-97a9-42e8-9c71-999491e3afac}";
 const NS_RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";

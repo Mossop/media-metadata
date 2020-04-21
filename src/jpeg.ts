@@ -1,5 +1,6 @@
 import { DataReader, Alignment } from "./datareader";
-import { RawMetadata, newRawMetadata } from "./metadata";
+import { RawMetadata } from "./types";
+import { newRawMetadata } from "./metadata";
 import { parseIfdData } from "./ifd";
 import { parseXmpData } from "./xmp";
 
