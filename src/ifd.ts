@@ -1,6 +1,7 @@
 import { DataReader, Alignment } from "./datareader";
 import exiftags, { TagNames } from "./exif-tags";
-import { RawMetadata, ExifMetadataType, ExifData, LinkedMetadataBlocks } from "./metadata";
+import { RawMetadata, ExifMetadataType, ExifData } from "./types";
+import { LinkedMetadataBlocks } from "./metadata";
 
 const BYTE_ORDER_INTEL = 0x4949;
 const BYTE_ORDER_MOTO = 0x4D4D;

@@ -1,4 +1,4 @@
-import { ExifMetadataType } from "./metadata";
+import { ExifMetadataType } from "./types";
 
 export interface TagNames {
   [id: number]: string;

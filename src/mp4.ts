@@ -1,7 +1,8 @@
 import moment from "moment";
 
 import { DataReader, Alignment } from "./datareader";
-import { RawMetadata, newRawMetadata, MP4TrackData, QTMetadata, Orientation } from "./metadata";
+import { RawMetadata, MP4TrackData, QTMetadata, Orientation } from "./types";
+import { newRawMetadata } from "./metadata";
 import { MP4_TYPE, parseXmpData } from "./xmp";
 
 // http://standards.iso.org/ittf/PubliclyAvailableStandards/c068960_ISO_IEC_14496-12_2015.zip

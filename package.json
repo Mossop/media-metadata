@@ -1,6 +1,6 @@
 {
   "name": "media-metadata",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Extract metadata from various media formats. Currently only supports JPEG images and MP4 videos.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -31,20 +31,20 @@
   },
   "homepage": "https://github.com/FractalBrew/media-metadata#readme",
   "devDependencies": {
-    "@types/node": "^12.7.12",
+    "@types/node": "^12.12.36",
     "@types/xmldom": "^0.1.29",
-    "@typescript-eslint/eslint-plugin": "^2.3.3",
-    "@typescript-eslint/eslint-plugin-tslint": "^2.3.3",
-    "@typescript-eslint/parser": "^2.3.3",
-    "eslint": "^6.5.1",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
     "expect": "^24.9.0",
-    "mocha": "^6.2.1",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.4"
+    "mocha": "^6.2.3",
+    "tslint": "^5.20.1",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "file-type": "^12.3.0",
+    "file-type": "^12.4.2",
     "moment": "^2.24.0",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.1.31"
   }
 }

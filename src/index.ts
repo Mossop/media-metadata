@@ -1,9 +1,10 @@
 import fileType from "file-type";
 
 import { parseJpegData, isJPEG } from "./jpeg";
-import { Metadata, newRawMetadata, generateMetadata } from "./metadata";
+import { newRawMetadata, generateMetadata } from "./metadata";
 import { DataViewReader, DataReader } from "./datareader";
 import { isMP4, parseMp4Data } from "./mp4";
+import { Metadata } from "./types";
 
 async function checkType(reader: DataReader, checker: (reader: DataReader) => Promise<boolean>): Promise<boolean> {
   let result = await checker(reader);
@@ -26,3 +27,11 @@ export async function parseBuffer(buffer: ArrayBuffer): Promise<Metadata> {
   }
   return generateMetadata(newRawMetadata(), type.mime);
 }
+
+export * from "./types";
+export {
+  rotateClockwise90,
+  rotateCounterClockwise90,
+  mirrorHorizontal,
+  mirrorVertical
+} from "./metadata";
